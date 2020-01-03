@@ -13,5 +13,20 @@
     "categories": [],
     "preview": {},
     "last_modified": "2020-01-03T13:41:27-05:00"
+  },
+  {
+    "path": "posts/2020-01-03-first-day-at-the-company/",
+    "title": "First day at the company",
+    "description": "A short description of the post.",
+    "author": [
+      {
+        "name": "Nora Jones",
+        "url": "https://example.com/norajones"
+      }
+    ],
+    "date": "2020-01-03",
+    "categories": [],
+    "preview": {},
+    "last_modified": "2020-01-03T14:23:58-05:00"
   }
 ]
