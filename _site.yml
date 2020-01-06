@@ -1,12 +1,21 @@
 name: "gitblog"
 title: "A normal person on earth"
 description: |
-  HVT
+  Looking for the beauty in the details
 output_dir: "docs"
+base_url: hvt2.github.io
+collections:
+  posts:
+    disqus: 
+      shortname: hvt2githubio
+      hidden: false
+    share: [twitter, linkedin]
 navbar:
   right:
     - text: "Home"
       href: index.html
     - text: "About"
       href: about.html
+    - icon: fa fa-rss
+      href: index.xml
 output: distill::distill_article
