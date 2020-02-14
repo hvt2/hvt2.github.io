@@ -3,7 +3,7 @@ title: "A normal person on earth"
 description: |
   Looking for the beauty in the details
 output_dir: "docs"
-base_url: hvt2.github.io
+base_url: https://vinbrule.github.io/hvt2/
 collections:
   posts:
     disqus: 
