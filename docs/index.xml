@@ -7,7 +7,15 @@
     <description>Looking for the beauty in the details
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Fri, 03 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 13 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>the 3rd test post!</title>
+      <dc:creator>Nora Jones</dc:creator>
+      <link>hvt2.github.io/posts/2020-02-13-the-3rd-test-post</link>
+      <description>A short description of the post.</description>
+      <guid>hvt2.github.io/posts/2020-02-13-the-3rd-test-post</guid>
+      <pubDate>Thu, 13 Feb 2020 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>First day at the company</title>
       <dc:creator>Nora Jones</dc:creator>
