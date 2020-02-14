@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
   <url>
-    <loc>hvt2.github.io/about.html</loc>
+    <loc>https://vinbrule.github.io/hvt2/about.html</loc>
     <lastmod>2020-01-05T19:41:38-05:00</lastmod>
   </url>
   <url>
-    <loc>hvt2.github.io/</loc>
+    <loc>https://vinbrule.github.io/hvt2/</loc>
     <lastmod>2020-01-03T14:22:09-05:00</lastmod>
   </url>
   <url>
-    <loc>hvt2.github.io/posts/2020-02-13-the-3rd-test-post/</loc>
+    <loc>https://vinbrule.github.io/hvt2/posts/2020-02-13-the-3rd-test-post/</loc>
     <lastmod>2020-02-13T21:07:12-05:00</lastmod>
   </url>
   <url>
-    <loc>hvt2.github.io/posts/2020-02-13-the-4th-test-post/</loc>
+    <loc>https://vinbrule.github.io/hvt2/posts/2020-02-13-the-4th-test-post/</loc>
     <lastmod>2020-02-13T21:53:15-05:00</lastmod>
   </url>
   <url>
-    <loc>hvt2.github.io/posts/2020-01-03-first-day-at-the-company/</loc>
+    <loc>https://vinbrule.github.io/hvt2/posts/2020-01-03-first-day-at-the-company/</loc>
     <lastmod>2020-01-03T14:23:58-05:00</lastmod>
   </url>
   <url>
-    <loc>hvt2.github.io/posts/welcome/</loc>
+    <loc>https://vinbrule.github.io/hvt2/posts/welcome/</loc>
     <lastmod>2020-01-03T13:41:27-05:00</lastmod>
   </url>
 </urlset>
