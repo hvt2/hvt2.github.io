@@ -8,7 +8,7 @@ collections:
   posts:
     disqus: 
       shortname: hvt
-      hidden: false
+      hidden: true
     share: [twitter, linkedin]
 navbar:
   right:
