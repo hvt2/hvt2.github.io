@@ -7,7 +7,7 @@ base_url: hvt2.github.io
 collections:
   posts:
     disqus: 
-      shortname: hvt2githubio
+      shortname: hvt
       hidden: false
     share: [twitter, linkedin]
 navbar:
