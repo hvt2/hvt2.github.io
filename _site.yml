@@ -6,7 +6,7 @@ output_dir: "docs"
 base_url: https://vinbrule.github.io/hvt2/
 collections:
   posts:
-    disqus: 
+    disqus:
       shortname: hvt
       hidden: true
     share: [twitter, linkedin]
