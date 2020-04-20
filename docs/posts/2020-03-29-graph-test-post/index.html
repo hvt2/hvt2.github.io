@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+  <!--radix_placeholder_meta_tags-->
+<title>A normal person on earth: Graph test post</title>
+
+<meta property="description" itemprop="description" content="A short description of the post."/>
+
+<link rel="canonical" href="https://vinbrule.github.io/hvt2/posts/2020-03-29-graph-test-post/"/>
+
+<!--  https://schema.org/Article -->
+<meta property="article:published" itemprop="datePublished" content="2020-03-29"/>
+<meta property="article:created" itemprop="dateCreated" content="2020-03-29"/>
+<meta name="article:author" content="Jonathan Regenstein"/>
+
+<!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+<meta property="og:title" content="A normal person on earth: Graph test post"/>
+<meta property="og:type" content="article"/>
+<meta property="og:description" content="A short description of the post."/>
+<meta property="og:url" content="https://vinbrule.github.io/hvt2/posts/2020-03-29-graph-test-post/"/>
+<meta property="og:image" content="https://vinbrule.github.io/hvt2/posts/2020-03-29-graph-test-post/graph-test-post_files/figure-html5/unnamed-chunk-1-1.png"/>
+<meta property="og:image:width" content="1152"/>
+<meta property="og:image:height" content="288"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:site_name" content="A normal person on earth"/>
+
+<!--  https://dev.twitter.com/cards/types/summary -->
+<meta property="twitter:card" content="summary_large_image"/>
+<meta property="twitter:title" content="A normal person on earth: Graph test post"/>
+<meta property="twitter:description" content="A short description of the post."/>
+<meta property="twitter:url" content="https://vinbrule.github.io/hvt2/posts/2020-03-29-graph-test-post/"/>
+<meta property="twitter:image" content="https://vinbrule.github.io/hvt2/posts/2020-03-29-graph-test-post/graph-test-post_files/figure-html5/unnamed-chunk-1-1.png"/>
+<meta property="twitter:image:width" content="1152"/>
+<meta property="twitter:image:height" content="288"/>
+
+<!--  https://scholar.google.com/intl/en/scholar/inclusion.html#indexing -->
+<meta name="citation_title" content="A normal person on earth: Graph test post"/>
+<meta name="citation_fulltext_html_url" content="https://vinbrule.github.io/hvt2/posts/2020-03-29-graph-test-post/"/>
+<meta name="citation_online_date" content="2020/03/29"/>
+<meta name="citation_publication_date" content="2020/03/29"/>
+<meta name="citation_author" content="Jonathan Regenstein"/>
+<!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+<script type="text/json" id="radix-rmarkdown-metadata">
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["Graph test post"]},{"type":"character","attributes":{},"value":["A short description of the post."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Jonathan Regenstein"]},{"type":"character","attributes":{},"value":["https://www.linkedin.com/in/jkregenstein/"]}]}]},{"type":"character","attributes":{},"value":["03-29-2020"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["https://vinbrule.github.io/hvt2/posts/2020-03-29-graph-test-post/"]},{"type":"character","attributes":{},"value":["https://vinbrule.github.io/hvt2/posts/2020-03-29-graph-test-post/"]}]}
+</script>
+<!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["graph-test-post_files/bowser-1.9.3/bowser.min.js","graph-test-post_files/distill-2.2.21/template.v2.js","graph-test-post_files/figure-html5/unnamed-chunk-1-1.png","graph-test-post_files/jquery-1.11.3/jquery.min.js","graph-test-post_files/webcomponents-2.0.0/webcomponents.js"]}
+  </script>
+  <!--radix_placeholder_navigation_in_header-->
+
+<script type="application/javascript">
+
+  window.headroom_prevent_pin = false;
+
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+
+    // initialize headroom for banner
+    var header = $('header').get(0);
+    var headerHeight = header.offsetHeight;
+    var headroom = new Headroom(header, {
+      onPin : function() {
+        if (window.headroom_prevent_pin) {
+          window.headroom_prevent_pin = false;
+          headroom.unpin();
+        }
+      }
+    });
+    headroom.init();
+    if(window.location.hash)
+      headroom.unpin();
+    $(header).addClass('headroom--transition');
+
+    // offset scroll location for banner on hash change
+    // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
+    window.addEventListener("hashchange", function(event) {
+      window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
+    });
+
+    // responsive menu
+    $('.distill-site-header').each(function(i, val) {
+      var topnav = $(this);
+      var toggle = topnav.find('.nav-toggle');
+      toggle.on('click', function() {
+        topnav.toggleClass('responsive');
+      });
+    });
+
+    // nav dropdowns
+    $('.nav-dropbtn').click(function(e) {
+      $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
+      $(this).parent().siblings('.nav-dropdown')
+         .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
+    });
+    $("body").click(function(e){
+      $('.nav-dropdown-content').removeClass('nav-dropdown-active');
+    });
+    $(".nav-dropdown").click(function(e){
+      e.stopPropagation();
+    });
+  });
+</script>
+
+<style type="text/css">
+
+/* Theme (user-documented overrideables for nav appearance) */
+
+.distill-site-nav {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #455a64;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.distill-site-nav a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.distill-site-nav a:hover {
+  color: white;
+}
+
+@media print {
+  .distill-site-nav {
+    display: none;
+  }
+}
+
+.distill-site-header {
+
+}
+
+.distill-site-footer {
+
+}
+
+
+/* Site Header */
+
+.distill-site-header {
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 3;
+}
+
+.distill-site-header .nav-left {
+  display: inline-block;
+  margin-left: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .distill-site-header .nav-left {
+    margin-left: 0;
+  }
+}
+
+
+.distill-site-header .nav-right {
+  float: right;
+  margin-right: 8px;
+}
+
+.distill-site-header a,
+.distill-site-header .title {
+  display: inline-block;
+  text-align: center;
+  padding: 14px 10px 14px 10px;
+}
+
+.distill-site-header .title {
+  font-size: 18px;
+}
+
+.distill-site-header .logo {
+  padding: 0;
+}
+
+.distill-site-header .logo img {
+  display: none;
+  max-height: 20px;
+  width: auto;
+  margin-bottom: -4px;
+}
+
+.distill-site-header .nav-image img {
+  max-height: 18px;
+  width: auto;
+  display: inline-block;
+  margin-bottom: -3px;
+}
+
+
+
+@media screen and (min-width: 1000px) {
+  .distill-site-header .logo img {
+    display: inline-block;
+  }
+  .distill-site-header .nav-left {
+    margin-left: 20px;
+  }
+  .distill-site-header .nav-right {
+    margin-right: 20px;
+  }
+  .distill-site-header .title {
+    padding-left: 12px;
+  }
+}
+
+
+.distill-site-header .nav-toggle {
+  display: none;
+}
+
+.nav-dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.nav-dropdown .nav-dropbtn {
+  border: none;
+  outline: none;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 16px 10px;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+  margin-top: 1px;
+  z-index: 2;
+}
+
+.nav-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 200px;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 4px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+  z-index: 1;
+  margin-top: 2px;
+  white-space: nowrap;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.nav-dropdown-content hr {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.nav-dropdown-active {
+  display: block;
+}
+
+.nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
+  color: black;
+  padding: 6px 24px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.nav-dropdown-content .nav-dropdown-header {
+  display: block;
+  padding: 5px 24px;
+  padding-bottom: 0;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #999999;
+  white-space: nowrap;
+}
+
+.nav-dropdown:hover .nav-dropbtn {
+  color: white;
+}
+
+.nav-dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.nav-right .nav-dropdown-content {
+  margin-left: -45%;
+  right: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
+  .distill-site-header a.nav-toggle {
+    float: right;
+    display: block;
+  }
+  .distill-site-header .title {
+    margin-left: 0;
+  }
+  .distill-site-header .nav-right {
+    margin-right: 0;
+  }
+  .distill-site-header {
+    overflow: hidden;
+  }
+  .nav-right .nav-dropdown-content {
+    margin-left: 0;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .distill-site-header.responsive {position: relative;}
+  .distill-site-header.responsive a.nav-toggle {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .distill-site-header.responsive a,
+  .distill-site-header.responsive .nav-dropdown {
+    display: block;
+    text-align: left;
+  }
+  .distill-site-header.responsive .nav-left,
+  .distill-site-header.responsive .nav-right {
+    width: 100%;
+  }
+  .distill-site-header.responsive .nav-dropdown {float: none;}
+  .distill-site-header.responsive .nav-dropdown-content {position: relative;}
+  .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* Site Footer */
+
+.distill-site-footer {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  z-index: 3;
+  margin-top: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+/* Headroom */
+
+d-title {
+  padding-top: 6rem;
+}
+
+@media print {
+  d-title {
+    padding-top: 4rem;
+  }
+}
+
+.headroom {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.headroom--transition {
+  transition: all .4s ease-in-out;
+}
+
+.headroom--unpinned {
+  top: -100px;
+}
+
+.headroom--pinned {
+  top: 0;
+}
+
+</style>
+
+<link href="../../site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
+<link href="../../site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
+<script src="../../site_libs/headroom-0.9.4/headroom.min.js"></script>
+<!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+<style type="text/css">
+
+body {
+  background-color: white;
+}
+
+.pandoc-table {
+  width: 100%;
+}
+
+.pandoc-table>caption {
+  margin-bottom: 10px;
+}
+
+.pandoc-table th:not([align]) {
+  text-align: left;
+}
+
+.pagedtable-footer {
+  font-size: 15px;
+}
+
+.html-widget {
+  margin-bottom: 2.0em;
+}
+
+.l-screen-inset {
+  padding-right: 16px;
+}
+
+.l-screen .caption {
+  margin-left: 10px;
+}
+
+.shaded {
+  background: rgb(247, 247, 247);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.shaded .html-widget {
+  margin-bottom: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.shaded .shaded-content {
+  background: white;
+}
+
+.text-output {
+  margin-top: 0;
+  line-height: 1.5em;
+}
+
+.hidden {
+  display: none !important;
+}
+
+d-article {
+  padding-bottom: 30px;
+}
+
+d-appendix {
+  padding-top: 30px;
+}
+
+d-article>p>img {
+  width: 100%;
+}
+
+d-article iframe {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 2.0em;
+  width: 100%;
+}
+
+figure img.external {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+/* CSS for table of contents */
+
+.d-toc {
+  color: rgba(0,0,0,0.8);
+  font-size: 0.8em;
+  line-height: 1em;
+}
+
+.d-toc-header {
+  font-size: 0.6rem;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 1.3em;
+}
+
+.d-toc a {
+  border-bottom: none;
+}
+
+.d-toc ul {
+  padding-left: 0;
+}
+
+.d-toc li>ul {
+  padding-top: 0.8em;
+  padding-left: 16px;
+  margin-bottom: 0.6em;
+}
+
+.d-toc ul,
+.d-toc li {
+  list-style-type: none;
+}
+
+.d-toc li {
+  margin-bottom: 0.9em;
+}
+
+.d-toc-separator {
+  margin-top: 20px;
+  margin-bottom: 2em;
+}
+
+.d-article-with-toc {
+  border-top: none;
+  padding-top: 0;
+}
+
+
+
+/* Tweak code blocks (note that this CSS is repeated above in an injection
+   into the d-code shadow dom) */
+
+d-code {
+  overflow-x: auto !important;
+}
+
+pre.d-code code.d-code {
+  padding-left: 10px;
+  font-size: 12px;
+  border-left: 2px solid rgba(0,0,0,0.1);
+}
+
+pre.text-output {
+
+  font-size: 12px;
+  color: black;
+  background: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+@media(min-width: 768px) {
+
+d-code {
+  overflow-x: visible !important;
+}
+
+pre.d-code code.d-code  {
+    padding-left: 18px;
+    font-size: 14px;
+}
+pre.text-output {
+  font-size: 14px;
+}
+}
+
+/* Figure */
+
+.figure {
+  position: relative;
+  margin-bottom: 2.5em;
+  margin-top: 1.5em;
+}
+
+.figure img {
+  width: 100%;
+}
+
+.figure .caption {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 12px;
+  line-height: 1.5em;
+}
+
+.figure img.external {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+.figure .caption a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.figure .caption b,
+.figure .caption strong, {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 1.0);
+}
+
+
+
+/* Tweak 1000px media break to show more text */
+
+@media(min-width: 1000px) {
+  .base-grid,
+  distill-header,
+  d-title,
+  d-abstract,
+  d-article,
+  d-appendix,
+  distill-appendix,
+  d-byline,
+  d-footnote-list,
+  d-citation-list,
+  distill-footer {
+    grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+    grid-column-gap: 16px;
+  }
+
+  .grid {
+    grid-column-gap: 16px;
+  }
+
+  d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+  }
+  figure .caption, .figure .caption, figure figcaption {
+    font-size: 13px;
+  }
+}
+
+@media(min-width: 1180px) {
+  .base-grid,
+  distill-header,
+  d-title,
+  d-abstract,
+  d-article,
+  d-appendix,
+  distill-appendix,
+  d-byline,
+  d-footnote-list,
+  d-citation-list,
+  distill-footer {
+    grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+    grid-column-gap: 32px;
+  }
+
+  .grid {
+    grid-column-gap: 32px;
+  }
+}
+
+
+/* Get the citation styles for the appendix (not auto-injected on render since
+   we do our own rendering of the citation appendix) */
+
+d-appendix .citation-appendix,
+.d-appendix .citation-appendix {
+  font-size: 11px;
+  line-height: 15px;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  padding-left: 18px;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.02);
+  padding: 10px 18px;
+  border-radius: 3px;
+  color: rgba(150, 150, 150, 1);
+  overflow: hidden;
+  margin-top: -12px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+
+/* Social footer */
+
+.social_footer {
+  margin-top: 30px;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.67);
+}
+
+.disqus-comments {
+  margin-right: 30px;
+}
+
+.disqus-comment-count {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+#disqus_thread {
+  margin-top: 30px;
+}
+
+.article-sharing a {
+  border-bottom: none;
+  margin-right: 8px;
+}
+
+.article-sharing a:hover {
+  border-bottom: none;
+}
+
+.sidebar-section.subscribe {
+  font-size: 12px;
+  line-height: 1.6em;
+}
+
+.subscribe p {
+  margin-bottom: 0.5em;
+}
+
+
+.article-footer .subscribe {
+  font-size: 15px;
+  margin-top: 45px;
+}
+
+
+/* Improve display for browsers without grid (IE/Edge <= 15) */
+
+.downlevel {
+  line-height: 1.6em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+}
+
+.downlevel .d-title {
+  padding-top: 6rem;
+  padding-bottom: 1.5rem;
+}
+
+.downlevel .d-title h1 {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.1em;
+  margin: 0 0 0.5rem;
+}
+
+.downlevel .d-title p {
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 1.55em;
+  margin-top: 0;
+}
+
+.downlevel .d-byline {
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  font-size: 0.8rem;
+  line-height: 1.8em;
+}
+
+.downlevel .section-separator {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.downlevel .d-article {
+  font-size: 1.06rem;
+  line-height: 1.7em;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+
+.downlevel .d-appendix {
+  padding-left: 0;
+  padding-right: 0;
+  max-width: none;
+  font-size: 0.8em;
+  line-height: 1.7em;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.5);
+  padding-top: 40px;
+  padding-bottom: 48px;
+}
+
+.downlevel .footnotes ol {
+  padding-left: 13px;
+}
+
+.downlevel .base-grid,
+.downlevel .distill-header,
+.downlevel .d-title,
+.downlevel .d-abstract,
+.downlevel .d-article,
+.downlevel .d-appendix,
+.downlevel .distill-appendix,
+.downlevel .d-byline,
+.downlevel .d-footnote-list,
+.downlevel .d-citation-list,
+.downlevel .distill-footer,
+.downlevel .appendix-bottom,
+.downlevel .posts-container {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+@media(min-width: 768px) {
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+  padding-left: 150px;
+  padding-right: 150px;
+  max-width: 900px;
+}
+}
+
+.downlevel pre code {
+  display: block;
+  border-left: 2px solid rgba(0, 0, 0, .1);
+  padding: 0 0 0 20px;
+  font-size: 14px;
+}
+
+.downlevel code, .downlevel pre {
+  color: black;
+  background: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+</style>
+
+<script type="application/javascript">
+
+function is_downlevel_browser() {
+  if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                 window.navigator.userAgent)) {
+    return true;
+  } else {
+    return window.load_distill_framework === undefined;
+  }
+}
+
+// show body when load is complete
+function on_load_complete() {
+
+  // set body to visible
+  document.body.style.visibility = 'visible';
+
+  // force redraw for leaflet widgets
+  if (window.HTMLWidgets) {
+    var maps = window.HTMLWidgets.findAll(".leaflet");
+    $.each(maps, function(i, el) {
+      var map = this.getMap();
+      map.invalidateSize();
+      map.eachLayer(function(layer) {
+        if (layer instanceof L.TileLayer)
+          layer.redraw();
+      });
+    });
+  }
+
+  // trigger 'shown' so htmlwidgets resize
+  $('d-article').trigger('shown');
+}
+
+function init_distill() {
+
+  init_common();
+
+  // create front matter
+  var front_matter = $('<d-front-matter></d-front-matter>');
+  $('#distill-front-matter').wrap(front_matter);
+
+  // create d-title
+  $('.d-title').changeElementType('d-title');
+
+  // create d-byline
+  var byline = $('<d-byline></d-byline>');
+  $('.d-byline').replaceWith(byline);
+
+  // create d-article
+  var article = $('<d-article></d-article>');
+  $('.d-article').wrap(article).children().unwrap();
+
+  // move posts container into article
+  $('.posts-container').appendTo($('d-article'));
+
+  // create d-appendix
+  $('.d-appendix').changeElementType('d-appendix');
+
+  // create d-bibliography
+  var bibliography = $('<d-bibliography></d-bibliography>');
+  $('#distill-bibliography').wrap(bibliography);
+
+  // flag indicating that we have appendix items
+  var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+  // replace citations with <d-cite>
+  $('.citation').each(function(i, val) {
+    appendix = true;
+    var cites = $(this).attr('data-cites').split(" ");
+    var dt_cite = $('<d-cite></d-cite>');
+    dt_cite.attr('key', cites.join());
+    $(this).replaceWith(dt_cite);
+  });
+  // remove refs
+  $('#refs').remove();
+
+  // replace footnotes with <d-footnote>
+  $('.footnote-ref').each(function(i, val) {
+    appendix = true;
+    var href = $(this).attr('href');
+    var id = href.replace('#', '');
+    var fn = $('#' + id);
+    var fn_p = $('#' + id + '>p');
+    fn_p.find('.footnote-back').remove();
+    var text = fn_p.html();
+    var dtfn = $('<d-footnote></d-footnote>');
+    dtfn.html(text);
+    $(this).replaceWith(dtfn);
+  });
+  // remove footnotes
+  $('.footnotes').remove();
+
+  $('h1.appendix, h2.appendix').each(function(i, val) {
+    $(this).changeElementType('h3');
+  });
+  $('h3.appendix').each(function(i, val) {
+    var id = $(this).attr('id');
+    $('.d-toc a[href="#' + id + '"]').parent().remove();
+    appendix = true;
+    $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+  });
+
+  // show d-appendix if we have appendix content
+  $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+  // replace code blocks with d-code
+  $('pre>code').each(function(i, val) {
+    var code = $(this);
+    var pre = code.parent();
+    var clz = "";
+    var language = pre.attr('class');
+    if (language) {
+      // map unknown languages to "clike" (without this they just dissapear)
+      if ($.inArray(language, ["bash", "clike", "css", "go", "html",
+                               "javascript", "js", "julia", "lua", "markdown",
+                               "markup", "mathml", "python", "svg", "xml"]) == -1)
+        language = "clike";
+      language = ' language="' + language + '"';
+      var dt_code = $('<d-code block' + language + clz + '></d-code>');
+      dt_code.text(code.text());
+      pre.replaceWith(dt_code);
+    } else {
+      code.addClass('text-output').unwrap().changeElementType('pre');
+    }
+  });
+
+  // localize layout chunks to just output
+  $('.layout-chunk').each(function(i, val) {
+
+    // capture layout
+    var layout = $(this).attr('data-layout');
+
+    // apply layout to markdown level block elements
+    var elements = $(this).children().not('d-code, pre.text-output, script');
+    elements.each(function(i, el) {
+      var layout_div = $('<div class="' + layout + '"></div>');
+      if (layout_div.hasClass('shaded')) {
+        var shaded_content = $('<div class="shaded-content"></div>');
+        $(this).wrap(shaded_content);
+        $(this).parent().wrap(layout_div);
+      } else {
+        $(this).wrap(layout_div);
+      }
+    });
+
+
+    // unwrap the layout-chunk div
+    $(this).children().unwrap();
+  });
+
+  // load distill framework
+  load_distill_framework();
+
+  // wait for window.distillRunlevel == 4 to do post processing
+  function distill_post_process() {
+
+    if (!window.distillRunlevel || window.distillRunlevel < 4)
+      return;
+
+    // hide author/affiliations entirely if we have no authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+    if (!have_authors)
+      $('d-byline').addClass('hidden');
+
+    // table of contents
+    if (have_authors) // adjust border if we are in authors
+      $('.d-toc').parent().addClass('d-article-with-toc');
+
+    // strip links that point to #
+    $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+    // hide elements of author/affiliations grid that have no value
+    function hide_byline_column(caption) {
+      $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+    }
+
+    // affiliations
+    var have_affiliations = false;
+    for (var i = 0; i<front_matter.authors.length; ++i) {
+      var author = front_matter.authors[i];
+      if (author.affiliation !== "&nbsp;") {
+        have_affiliations = true;
+        break;
+      }
+    }
+    if (!have_affiliations)
+      $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+    // published date
+    if (!front_matter.publishedDate)
+      hide_byline_column("Published");
+
+    // document object identifier
+    var doi = $('d-byline').find('h3:contains("DOI")');
+    var doi_p = doi.next().empty();
+    if (!front_matter.doi) {
+      // if we have a citation and valid citationText then link to that
+      if ($('#citation').length > 0 && front_matter.citationText) {
+        doi.html('Citation');
+        $('<a href="#citation"></a>')
+          .text(front_matter.citationText)
+          .appendTo(doi_p);
+      } else {
+        hide_byline_column("DOI");
+      }
+    } else {
+      $('<a></a>')
+         .attr('href', "https://doi.org/" + front_matter.doi)
+         .html(front_matter.doi)
+         .appendTo(doi_p);
+    }
+
+     // change plural form of authors/affiliations
+    if (front_matter.authors.length === 1) {
+      var grid = $('.authors-affiliations');
+      grid.children('h3:contains("Authors")').text('Author');
+      grid.children('h3:contains("Affiliations")').text('Affiliation');
+    }
+
+    // inject pre code styles (can't do this with a global stylesheet b/c a shadow root is used)
+    $('d-code').each(function(i, val) {
+      var style = document.createElement('style');
+      style.innerHTML = 'pre code { padding-left: 10px; font-size: 12px; border-left: 2px solid rgba(0,0,0,0.1); } ' +
+                        '@media(min-width: 768px) { pre code { padding-left: 18px; font-size: 14px; } }';
+      if (this.shadowRoot)
+        this.shadowRoot.appendChild(style);
+    });
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // clear polling timer
+    clearInterval(tid);
+
+    // show body now that everything is ready
+    on_load_complete();
+  }
+
+  var tid = setInterval(distill_post_process, 50);
+  distill_post_process();
+
+}
+
+function init_downlevel() {
+
+  init_common();
+
+   // insert hr after d-title
+  $('.d-title').after($('<hr class="section-separator"/>'));
+
+  // check if we have authors
+  var front_matter = JSON.parse($("#distill-front-matter").html());
+  var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+  // manage byline/border
+  if (!have_authors)
+    $('.d-byline').remove();
+  $('.d-byline').after($('<hr class="section-separator"/>'));
+  $('.d-byline a').remove();
+
+  // remove toc
+  $('.d-toc-header').remove();
+  $('.d-toc').remove();
+  $('.d-toc-separator').remove();
+
+  // move appendix elements
+  $('h1.appendix, h2.appendix').each(function(i, val) {
+    $(this).changeElementType('h3');
+  });
+  $('h3.appendix').each(function(i, val) {
+    $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+  });
+
+
+  // inject headers into references and footnotes
+  var refs_header = $('<h3></h3>');
+  refs_header.text('References');
+  $('#refs').prepend(refs_header);
+
+  var footnotes_header = $('<h3></h3');
+  footnotes_header.text('Footnotes');
+  $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+  // move appendix-bottom entries to the bottom
+  $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+  $('.appendix-bottom').remove();
+
+  // remove appendix if it's empty
+  if ($('.d-appendix').children().length === 0)
+    $('.d-appendix').remove();
+
+  // prepend separator above appendix
+  $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+  // trim code
+  $('pre>code').each(function(i, val) {
+    $(this).html($.trim($(this).html()));
+  });
+
+  // move posts-container right before article
+  $('.posts-container').insertBefore($('.d-article'));
+
+  $('body').addClass('downlevel');
+
+  on_load_complete();
+}
+
+
+function init_common() {
+
+  // jquery plugin to change element types
+  (function($) {
+    $.fn.changeElementType = function(newType) {
+      var attrs = {};
+
+      $.each(this[0].attributes, function(idx, attr) {
+        attrs[attr.nodeName] = attr.nodeValue;
+      });
+
+      this.replaceWith(function() {
+        return $("<" + newType + "/>", attrs).append($(this).contents());
+      });
+    };
+  })(jQuery);
+
+  // prevent underline for linked images
+  $('a > img').parent().css({'border-bottom' : 'none'});
+
+  // mark non-body figures created by knitr chunks as 100% width
+  $('.layout-chunk').each(function(i, val) {
+    var figures = $(this).find('img, .html-widget');
+    if ($(this).attr('data-layout') !== "l-body") {
+      figures.css('width', '100%');
+    } else {
+      figures.css('max-width', '100%');
+      figures.filter("[width]").each(function(i, val) {
+        var fig = $(this);
+        fig.css('width', fig.attr('width') + 'px');
+      });
+
+    }
+  });
+
+  // auto-append index.html to post-preview links in file: protocol
+  // and in rstudio ide preview
+  $('.post-preview').each(function(i, val) {
+    if (window.location.protocol === "file:")
+      $(this).attr('href', $(this).attr('href') + "index.html");
+  });
+
+  // get rid of index.html references in header
+  if (window.location.protocol !== "file:") {
+    $('.distill-site-header a[href]').each(function(i,val) {
+      $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+    });
+  }
+
+  // add class to pandoc style tables
+  $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+  $('.kable-table').children('table').addClass('pandoc-table');
+
+  // add figcaption style to table captions
+  $('caption').parent('table').addClass("figcaption");
+
+  // initialize posts list
+  if (window.init_posts_list)
+    window.init_posts_list();
+
+  // implmement disqus comment link
+  $('.disqus-comment-count').click(function() {
+    window.headroom_prevent_pin = true;
+    $('#disqus_thread').toggleClass('hidden');
+    if (!$('#disqus_thread').hasClass('hidden')) {
+      var offset = $(this).offset();
+      $(window).resize();
+      $('html, body').animate({
+        scrollTop: offset.top - 35
+      });
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  if (is_downlevel_browser())
+    init_downlevel();
+  else
+    window.addEventListener('WebComponentsReady', init_distill);
+});
+
+</script>
+
+<!--/radix_placeholder_distill-->
+  <script src="../../site_libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+  <script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="../../site_libs/proj4js-2.3.15/proj4.js"></script>
+  <link href="../../site_libs/highcharts-7.0.1/css/motion.css" rel="stylesheet" />
+  <link href="../../site_libs/highcharts-7.0.1/css/htmlwdgtgrid.css" rel="stylesheet" />
+  <script src="../../site_libs/highcharts-7.0.1/highcharts.js"></script>
+  <script src="../../site_libs/highcharts-7.0.1/highcharts-3d.js"></script>
+  <script src="../../site_libs/highcharts-7.0.1/highcharts-more.js"></script>
+  <script src="../../site_libs/highcharts-7.0.1/modules/stock.js"></script>
+  <script src="../../site_libs/highcharts-7.0.1/modules/map.js"></script>
+  <script src="../../site_libs/highcharts-7.0.1/modules/annotations.js"></script>
+  <script src="../../site_libs/highcharts-7.0.1/modules/boost.js"></script>
+  <script src="../../site_libs/highcharts-7.0.1/modules/data.js"></script>
+  <script src="../../site_libs/highcharts-7.0.1/modules/drag-panes.js"></script>
+  <script src="../../site_libs/highcharts-7.0.1/modules/drilldown.js"></script>
+  <script src="../../site_libs/highcharts-7.0.1/modules/item-series.js"></script>
+  <script src="../../site_libs/highcharts-7.0.1/modules/offline-exporting.js"></script>
+  <script src="../../site_libs/highcharts-7.0.1/modules/overlapping-datalabels.js"></script>
+  <script src="../../site_libs/highcharts-7.0.1/modules/exporting.js"></script>
+  <script src="../../site_libs/highcharts-7.0.1/modules/export-data.js"></script>
+  <script src="../../site_libs/highcharts-7.0.1/modules/funnel.js"></script>
+  <script src="../../site_libs/highcharts-7.0.1/modules/heatmap.js"></script>
+  <script src="../../site_libs/highcharts-7.0.1/modules/treemap.js"></script>
+  <script src="../../site_libs/highcharts-7.0.1/modules/sankey.js"></script>
+  <script src="../../site_libs/highcharts-7.0.1/modules/solid-gauge.js"></script>
+  <script src="../../site_libs/highcharts-7.0.1/modules/streamgraph.js"></script>
+  <script src="../../site_libs/highcharts-7.0.1/modules/sunburst.js"></script>
+  <script src="../../site_libs/highcharts-7.0.1/modules/vector.js"></script>
+  <script src="../../site_libs/highcharts-7.0.1/modules/wordcloud.js"></script>
+  <script src="../../site_libs/highcharts-7.0.1/modules/xrange.js"></script>
+  <script src="../../site_libs/highcharts-7.0.1/modules/tilemap.js"></script>
+  <script src="../../site_libs/highcharts-7.0.1/modules/venn.js"></script>
+  <script src="../../site_libs/highcharts-7.0.1/modules/gantt.js"></script>
+  <script src="../../site_libs/highcharts-7.0.1/modules/timeline.js"></script>
+  <script src="../../site_libs/highcharts-7.0.1/modules/parallel-coordinates.js"></script>
+  <script src="../../site_libs/highcharts-7.0.1/plugins/grouped-categories.js"></script>
+  <script src="../../site_libs/highcharts-7.0.1/plugins/motion.js"></script>
+  <script src="../../site_libs/highcharts-7.0.1/plugins/multicolor_series.js"></script>
+  <script src="../../site_libs/highcharts-7.0.1/custom/reset.js"></script>
+  <script src="../../site_libs/highcharts-7.0.1/custom/symbols-extra.js"></script>
+  <script src="../../site_libs/highcharts-7.0.1/custom/text-symbols.js"></script>
+  <script src="../../site_libs/highchart-binding-0.7.0/highchart.js"></script>
+  <script src="../../site_libs/bowser-1.9.3/bowser.min.js"></script>
+  <script src="../../site_libs/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="../../site_libs/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+<!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"Graph test post","description":"A short description of the post.","authors":[{"author":"Jonathan Regenstein","authorURL":"https://www.linkedin.com/in/jkregenstein/","affiliation":"&nbsp;","affiliationURL":"#"}],"publishedDate":"2020-03-29T00:00:00.000-04:00","citationText":"Regenstein, 2020"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<header class="header header--fixed" role="banner">
+<nav class="distill-site-nav distill-site-header">
+<div class="nav-left">
+<a href="../../index.html" class="title">A normal person on earth</a>
+</div>
+<div class="nav-right">
+<a href="../../index.html">Home</a>
+<a href="../../about.html">About</a>
+<a href="../../index.xml">
+<i class="fa fa-rss"></i>
+</a>
+<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
+</div>
+</nav>
+</header>
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>Graph test post</h1>
+<p><p>A short description of the post.</p></p>
+</div>
+
+<div class="d-byline">
+  Jonathan Regenstein <a href="https://www.linkedin.com/in/jkregenstein/" class="uri">https://www.linkedin.com/in/jkregenstein/</a> 
+  
+<br/>03-29-2020
+</div>
+
+<div class="d-article">
+<div class="layout-chunk" data-layout="l-body-outset">
+<p><img src="graph-test-post_files/figure-html5/unnamed-chunk-1-1.png" width="576" /></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-3d37db06f72271cf5c08" style="width:100%;height:500px;" class="highchart html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3d37db06f72271cf5c08">{"x":{"hc_opts":{"title":{"text":null},"yAxis":{"title":{"text":"hwy"},"type":"linear"},"credits":{"enabled":false},"exporting":{"enabled":false},"plotOptions":{"series":{"label":{"enabled":false},"turboThreshold":0,"showInLegend":true},"treemap":{"layoutAlgorithm":"squarified"},"scatter":{"marker":{"symbol":"circle"}}},"series":[{"name":"2seater","data":[{"manufacturer":"chevrolet","model":"corvette","displ":5.7,"year":1999,"cyl":8,"trans":"manual(m6)","drv":"r","cty":16,"hwy":26,"fl":"p","class":"2seater","x":5.7,"y":26},{"manufacturer":"chevrolet","model":"corvette","displ":5.7,"year":1999,"cyl":8,"trans":"auto(l4)","drv":"r","cty":15,"hwy":23,"fl":"p","class":"2seater","x":5.7,"y":23},{"manufacturer":"chevrolet","model":"corvette","displ":6.2,"year":2008,"cyl":8,"trans":"manual(m6)","drv":"r","cty":16,"hwy":26,"fl":"p","class":"2seater","x":6.2,"y":26},{"manufacturer":"chevrolet","model":"corvette","displ":6.2,"year":2008,"cyl":8,"trans":"auto(s6)","drv":"r","cty":15,"hwy":25,"fl":"p","class":"2seater","x":6.2,"y":25},{"manufacturer":"chevrolet","model":"corvette","displ":7,"year":2008,"cyl":8,"trans":"manual(m6)","drv":"r","cty":15,"hwy":24,"fl":"p","class":"2seater","x":7,"y":24}],"type":"scatter"},{"name":"compact","data":[{"manufacturer":"audi","model":"a4","displ":1.8,"year":1999,"cyl":4,"trans":"auto(l5)","drv":"f","cty":18,"hwy":29,"fl":"p","class":"compact","x":1.8,"y":29},{"manufacturer":"audi","model":"a4","displ":1.8,"year":1999,"cyl":4,"trans":"manual(m5)","drv":"f","cty":21,"hwy":29,"fl":"p","class":"compact","x":1.8,"y":29},{"manufacturer":"audi","model":"a4","displ":2,"year":2008,"cyl":4,"trans":"manual(m6)","drv":"f","cty":20,"hwy":31,"fl":"p","class":"compact","x":2,"y":31},{"manufacturer":"audi","model":"a4","displ":2,"year":2008,"cyl":4,"trans":"auto(av)","drv":"f","cty":21,"hwy":30,"fl":"p","class":"compact","x":2,"y":30},{"manufacturer":"audi","model":"a4","displ":2.8,"year":1999,"cyl":6,"trans":"auto(l5)","drv":"f","cty":16,"hwy":26,"fl":"p","class":"compact","x":2.8,"y":26},{"manufacturer":"audi","model":"a4","displ":2.8,"year":1999,"cyl":6,"trans":"manual(m5)","drv":"f","cty":18,"hwy":26,"fl":"p","class":"compact","x":2.8,"y":26},{"manufacturer":"audi","model":"a4","displ":3.1,"year":2008,"cyl":6,"trans":"auto(av)","drv":"f","cty":18,"hwy":27,"fl":"p","class":"compact","x":3.1,"y":27},{"manufacturer":"audi","model":"a4 quattro","displ":1.8,"year":1999,"cyl":4,"trans":"manual(m5)","drv":"4","cty":18,"hwy":26,"fl":"p","class":"compact","x":1.8,"y":26},{"manufacturer":"audi","model":"a4 quattro","displ":1.8,"year":1999,"cyl":4,"trans":"auto(l5)","drv":"4","cty":16,"hwy":25,"fl":"p","class":"compact","x":1.8,"y":25},{"manufacturer":"audi","model":"a4 quattro","displ":2,"year":2008,"cyl":4,"trans":"manual(m6)","drv":"4","cty":20,"hwy":28,"fl":"p","class":"compact","x":2,"y":28},{"manufacturer":"audi","model":"a4 quattro","displ":2,"year":2008,"cyl":4,"trans":"auto(s6)","drv":"4","cty":19,"hwy":27,"fl":"p","class":"compact","x":2,"y":27},{"manufacturer":"audi","model":"a4 quattro","displ":2.8,"year":1999,"cyl":6,"trans":"auto(l5)","drv":"4","cty":15,"hwy":25,"fl":"p","class":"compact","x":2.8,"y":25},{"manufacturer":"audi","model":"a4 quattro","displ":2.8,"year":1999,"cyl":6,"trans":"manual(m5)","drv":"4","cty":17,"hwy":25,"fl":"p","class":"compact","x":2.8,"y":25},{"manufacturer":"audi","model":"a4 quattro","displ":3.1,"year":2008,"cyl":6,"trans":"auto(s6)","drv":"4","cty":17,"hwy":25,"fl":"p","class":"compact","x":3.1,"y":25},{"manufacturer":"audi","model":"a4 quattro","displ":3.1,"year":2008,"cyl":6,"trans":"manual(m6)","drv":"4","cty":15,"hwy":25,"fl":"p","class":"compact","x":3.1,"y":25},{"manufacturer":"nissan","model":"altima","displ":2.4,"year":1999,"cyl":4,"trans":"manual(m5)","drv":"f","cty":21,"hwy":29,"fl":"r","class":"compact","x":2.4,"y":29},{"manufacturer":"nissan","model":"altima","displ":2.4,"year":1999,"cyl":4,"trans":"auto(l4)","drv":"f","cty":19,"hwy":27,"fl":"r","class":"compact","x":2.4,"y":27},{"manufacturer":"subaru","model":"impreza awd","displ":2.5,"year":2008,"cyl":4,"trans":"auto(s4)","drv":"4","cty":20,"hwy":25,"fl":"p","class":"compact","x":2.5,"y":25},{"manufacturer":"subaru","model":"impreza awd","displ":2.5,"year":2008,"cyl":4,"trans":"auto(s4)","drv":"4","cty":20,"hwy":27,"fl":"r","class":"compact","x":2.5,"y":27},{"manufacturer":"subaru","model":"impreza awd","displ":2.5,"year":2008,"cyl":4,"trans":"manual(m5)","drv":"4","cty":19,"hwy":25,"fl":"p","class":"compact","x":2.5,"y":25},{"manufacturer":"subaru","model":"impreza awd","displ":2.5,"year":2008,"cyl":4,"trans":"manual(m5)","drv":"4","cty":20,"hwy":27,"fl":"r","class":"compact","x":2.5,"y":27},{"manufacturer":"toyota","model":"camry solara","displ":2.2,"year":1999,"cyl":4,"trans":"auto(l4)","drv":"f","cty":21,"hwy":27,"fl":"r","class":"compact","x":2.2,"y":27},{"manufacturer":"toyota","model":"camry solara","displ":2.2,"year":1999,"cyl":4,"trans":"manual(m5)","drv":"f","cty":21,"hwy":29,"fl":"r","class":"compact","x":2.2,"y":29},{"manufacturer":"toyota","model":"camry solara","displ":2.4,"year":2008,"cyl":4,"trans":"manual(m5)","drv":"f","cty":21,"hwy":31,"fl":"r","class":"compact","x":2.4,"y":31},{"manufacturer":"toyota","model":"camry solara","displ":2.4,"year":2008,"cyl":4,"trans":"auto(s5)","drv":"f","cty":22,"hwy":31,"fl":"r","class":"compact","x":2.4,"y":31},{"manufacturer":"toyota","model":"camry solara","displ":3,"year":1999,"cyl":6,"trans":"auto(l4)","drv":"f","cty":18,"hwy":26,"fl":"r","class":"compact","x":3,"y":26},{"manufacturer":"toyota","model":"camry solara","displ":3,"year":1999,"cyl":6,"trans":"manual(m5)","drv":"f","cty":18,"hwy":26,"fl":"r","class":"compact","x":3,"y":26},{"manufacturer":"toyota","model":"camry solara","displ":3.3,"year":2008,"cyl":6,"trans":"auto(s5)","drv":"f","cty":18,"hwy":27,"fl":"r","class":"compact","x":3.3,"y":27},{"manufacturer":"toyota","model":"corolla","displ":1.8,"year":1999,"cyl":4,"trans":"auto(l3)","drv":"f","cty":24,"hwy":30,"fl":"r","class":"compact","x":1.8,"y":30},{"manufacturer":"toyota","model":"corolla","displ":1.8,"year":1999,"cyl":4,"trans":"auto(l4)","drv":"f","cty":24,"hwy":33,"fl":"r","class":"compact","x":1.8,"y":33},{"manufacturer":"toyota","model":"corolla","displ":1.8,"year":1999,"cyl":4,"trans":"manual(m5)","drv":"f","cty":26,"hwy":35,"fl":"r","class":"compact","x":1.8,"y":35},{"manufacturer":"toyota","model":"corolla","displ":1.8,"year":2008,"cyl":4,"trans":"manual(m5)","drv":"f","cty":28,"hwy":37,"fl":"r","class":"compact","x":1.8,"y":37},{"manufacturer":"toyota","model":"corolla","displ":1.8,"year":2008,"cyl":4,"trans":"auto(l4)","drv":"f","cty":26,"hwy":35,"fl":"r","class":"compact","x":1.8,"y":35},{"manufacturer":"volkswagen","model":"gti","displ":2,"year":1999,"cyl":4,"trans":"manual(m5)","drv":"f","cty":21,"hwy":29,"fl":"r","class":"compact","x":2,"y":29},{"manufacturer":"volkswagen","model":"gti","displ":2,"year":1999,"cyl":4,"trans":"auto(l4)","drv":"f","cty":19,"hwy":26,"fl":"r","class":"compact","x":2,"y":26},{"manufacturer":"volkswagen","model":"gti","displ":2,"year":2008,"cyl":4,"trans":"manual(m6)","drv":"f","cty":21,"hwy":29,"fl":"p","class":"compact","x":2,"y":29},{"manufacturer":"volkswagen","model":"gti","displ":2,"year":2008,"cyl":4,"trans":"auto(s6)","drv":"f","cty":22,"hwy":29,"fl":"p","class":"compact","x":2,"y":29},{"manufacturer":"volkswagen","model":"gti","displ":2.8,"year":1999,"cyl":6,"trans":"manual(m5)","drv":"f","cty":17,"hwy":24,"fl":"r","class":"compact","x":2.8,"y":24},{"manufacturer":"volkswagen","model":"jetta","displ":1.9,"year":1999,"cyl":4,"trans":"manual(m5)","drv":"f","cty":33,"hwy":44,"fl":"d","class":"compact","x":1.9,"y":44},{"manufacturer":"volkswagen","model":"jetta","displ":2,"year":1999,"cyl":4,"trans":"manual(m5)","drv":"f","cty":21,"hwy":29,"fl":"r","class":"compact","x":2,"y":29},{"manufacturer":"volkswagen","model":"jetta","displ":2,"year":1999,"cyl":4,"trans":"auto(l4)","drv":"f","cty":19,"hwy":26,"fl":"r","class":"compact","x":2,"y":26},{"manufacturer":"volkswagen","model":"jetta","displ":2,"year":2008,"cyl":4,"trans":"auto(s6)","drv":"f","cty":22,"hwy":29,"fl":"p","class":"compact","x":2,"y":29},{"manufacturer":"volkswagen","model":"jetta","displ":2,"year":2008,"cyl":4,"trans":"manual(m6)","drv":"f","cty":21,"hwy":29,"fl":"p","class":"compact","x":2,"y":29},{"manufacturer":"volkswagen","model":"jetta","displ":2.5,"year":2008,"cyl":5,"trans":"auto(s6)","drv":"f","cty":21,"hwy":29,"fl":"r","class":"compact","x":2.5,"y":29},{"manufacturer":"volkswagen","model":"jetta","displ":2.5,"year":2008,"cyl":5,"trans":"manual(m5)","drv":"f","cty":21,"hwy":29,"fl":"r","class":"compact","x":2.5,"y":29},{"manufacturer":"volkswagen","model":"jetta","displ":2.8,"year":1999,"cyl":6,"trans":"auto(l4)","drv":"f","cty":16,"hwy":23,"fl":"r","class":"compact","x":2.8,"y":23},{"manufacturer":"volkswagen","model":"jetta","displ":2.8,"year":1999,"cyl":6,"trans":"manual(m5)","drv":"f","cty":17,"hwy":24,"fl":"r","class":"compact","x":2.8,"y":24}],"type":"scatter"},{"name":"midsize","data":[{"manufacturer":"audi","model":"a6 quattro","displ":2.8,"year":1999,"cyl":6,"trans":"auto(l5)","drv":"4","cty":15,"hwy":24,"fl":"p","class":"midsize","x":2.8,"y":24},{"manufacturer":"audi","model":"a6 quattro","displ":3.1,"year":2008,"cyl":6,"trans":"auto(s6)","drv":"4","cty":17,"hwy":25,"fl":"p","class":"midsize","x":3.1,"y":25},{"manufacturer":"audi","model":"a6 quattro","displ":4.2,"year":2008,"cyl":8,"trans":"auto(s6)","drv":"4","cty":16,"hwy":23,"fl":"p","class":"midsize","x":4.2,"y":23},{"manufacturer":"chevrolet","model":"malibu","displ":2.4,"year":1999,"cyl":4,"trans":"auto(l4)","drv":"f","cty":19,"hwy":27,"fl":"r","class":"midsize","x":2.4,"y":27},{"manufacturer":"chevrolet","model":"malibu","displ":2.4,"year":2008,"cyl":4,"trans":"auto(l4)","drv":"f","cty":22,"hwy":30,"fl":"r","class":"midsize","x":2.4,"y":30},{"manufacturer":"chevrolet","model":"malibu","displ":3.1,"year":1999,"cyl":6,"trans":"auto(l4)","drv":"f","cty":18,"hwy":26,"fl":"r","class":"midsize","x":3.1,"y":26},{"manufacturer":"chevrolet","model":"malibu","displ":3.5,"year":2008,"cyl":6,"trans":"auto(l4)","drv":"f","cty":18,"hwy":29,"fl":"r","class":"midsize","x":3.5,"y":29},{"manufacturer":"chevrolet","model":"malibu","displ":3.6,"year":2008,"cyl":6,"trans":"auto(s6)","drv":"f","cty":17,"hwy":26,"fl":"r","class":"midsize","x":3.6,"y":26},{"manufacturer":"hyundai","model":"sonata","displ":2.4,"year":1999,"cyl":4,"trans":"auto(l4)","drv":"f","cty":18,"hwy":26,"fl":"r","class":"midsize","x":2.4,"y":26},{"manufacturer":"hyundai","model":"sonata","displ":2.4,"year":1999,"cyl":4,"trans":"manual(m5)","drv":"f","cty":18,"hwy":27,"fl":"r","class":"midsize","x":2.4,"y":27},{"manufacturer":"hyundai","model":"sonata","displ":2.4,"year":2008,"cyl":4,"trans":"auto(l4)","drv":"f","cty":21,"hwy":30,"fl":"r","class":"midsize","x":2.4,"y":30},{"manufacturer":"hyundai","model":"sonata","displ":2.4,"year":2008,"cyl":4,"trans":"manual(m5)","drv":"f","cty":21,"hwy":31,"fl":"r","class":"midsize","x":2.4,"y":31},{"manufacturer":"hyundai","model":"sonata","displ":2.5,"year":1999,"cyl":6,"trans":"auto(l4)","drv":"f","cty":18,"hwy":26,"fl":"r","class":"midsize","x":2.5,"y":26},{"manufacturer":"hyundai","model":"sonata","displ":2.5,"year":1999,"cyl":6,"trans":"manual(m5)","drv":"f","cty":18,"hwy":26,"fl":"r","class":"midsize","x":2.5,"y":26},{"manufacturer":"hyundai","model":"sonata","displ":3.3,"year":2008,"cyl":6,"trans":"auto(l5)","drv":"f","cty":19,"hwy":28,"fl":"r","class":"midsize","x":3.3,"y":28},{"manufacturer":"nissan","model":"altima","displ":2.5,"year":2008,"cyl":4,"trans":"auto(av)","drv":"f","cty":23,"hwy":31,"fl":"r","class":"midsize","x":2.5,"y":31},{"manufacturer":"nissan","model":"altima","displ":2.5,"year":2008,"cyl":4,"trans":"manual(m6)","drv":"f","cty":23,"hwy":32,"fl":"r","class":"midsize","x":2.5,"y":32},{"manufacturer":"nissan","model":"altima","displ":3.5,"year":2008,"cyl":6,"trans":"manual(m6)","drv":"f","cty":19,"hwy":27,"fl":"p","class":"midsize","x":3.5,"y":27},{"manufacturer":"nissan","model":"altima","displ":3.5,"year":2008,"cyl":6,"trans":"auto(av)","drv":"f","cty":19,"hwy":26,"fl":"p","class":"midsize","x":3.5,"y":26},{"manufacturer":"nissan","model":"maxima","displ":3,"year":1999,"cyl":6,"trans":"auto(l4)","drv":"f","cty":18,"hwy":26,"fl":"r","class":"midsize","x":3,"y":26},{"manufacturer":"nissan","model":"maxima","displ":3,"year":1999,"cyl":6,"trans":"manual(m5)","drv":"f","cty":19,"hwy":25,"fl":"r","class":"midsize","x":3,"y":25},{"manufacturer":"nissan","model":"maxima","displ":3.5,"year":2008,"cyl":6,"trans":"auto(av)","drv":"f","cty":19,"hwy":25,"fl":"p","class":"midsize","x":3.5,"y":25},{"manufacturer":"pontiac","model":"grand prix","displ":3.1,"year":1999,"cyl":6,"trans":"auto(l4)","drv":"f","cty":18,"hwy":26,"fl":"r","class":"midsize","x":3.1,"y":26},{"manufacturer":"pontiac","model":"grand prix","displ":3.8,"year":1999,"cyl":6,"trans":"auto(l4)","drv":"f","cty":16,"hwy":26,"fl":"p","class":"midsize","x":3.8,"y":26},{"manufacturer":"pontiac","model":"grand prix","displ":3.8,"year":1999,"cyl":6,"trans":"auto(l4)","drv":"f","cty":17,"hwy":27,"fl":"r","class":"midsize","x":3.8,"y":27},{"manufacturer":"pontiac","model":"grand prix","displ":3.8,"year":2008,"cyl":6,"trans":"auto(l4)","drv":"f","cty":18,"hwy":28,"fl":"r","class":"midsize","x":3.8,"y":28},{"manufacturer":"pontiac","model":"grand prix","displ":5.3,"year":2008,"cyl":8,"trans":"auto(s4)","drv":"f","cty":16,"hwy":25,"fl":"p","class":"midsize","x":5.3,"y":25},{"manufacturer":"toyota","model":"camry","displ":2.2,"year":1999,"cyl":4,"trans":"manual(m5)","drv":"f","cty":21,"hwy":29,"fl":"r","class":"midsize","x":2.2,"y":29},{"manufacturer":"toyota","model":"camry","displ":2.2,"year":1999,"cyl":4,"trans":"auto(l4)","drv":"f","cty":21,"hwy":27,"fl":"r","class":"midsize","x":2.2,"y":27},{"manufacturer":"toyota","model":"camry","displ":2.4,"year":2008,"cyl":4,"trans":"manual(m5)","drv":"f","cty":21,"hwy":31,"fl":"r","class":"midsize","x":2.4,"y":31},{"manufacturer":"toyota","model":"camry","displ":2.4,"year":2008,"cyl":4,"trans":"auto(l5)","drv":"f","cty":21,"hwy":31,"fl":"r","class":"midsize","x":2.4,"y":31},{"manufacturer":"toyota","model":"camry","displ":3,"year":1999,"cyl":6,"trans":"auto(l4)","drv":"f","cty":18,"hwy":26,"fl":"r","class":"midsize","x":3,"y":26},{"manufacturer":"toyota","model":"camry","displ":3,"year":1999,"cyl":6,"trans":"manual(m5)","drv":"f","cty":18,"hwy":26,"fl":"r","class":"midsize","x":3,"y":26},{"manufacturer":"toyota","model":"camry","displ":3.5,"year":2008,"cyl":6,"trans":"auto(s6)","drv":"f","cty":19,"hwy":28,"fl":"r","class":"midsize","x":3.5,"y":28},{"manufacturer":"volkswagen","model":"passat","displ":1.8,"year":1999,"cyl":4,"trans":"manual(m5)","drv":"f","cty":21,"hwy":29,"fl":"p","class":"midsize","x":1.8,"y":29},{"manufacturer":"volkswagen","model":"passat","displ":1.8,"year":1999,"cyl":4,"trans":"auto(l5)","drv":"f","cty":18,"hwy":29,"fl":"p","class":"midsize","x":1.8,"y":29},{"manufacturer":"volkswagen","model":"passat","displ":2,"year":2008,"cyl":4,"trans":"auto(s6)","drv":"f","cty":19,"hwy":28,"fl":"p","class":"midsize","x":2,"y":28},{"manufacturer":"volkswagen","model":"passat","displ":2,"year":2008,"cyl":4,"trans":"manual(m6)","drv":"f","cty":21,"hwy":29,"fl":"p","class":"midsize","x":2,"y":29},{"manufacturer":"volkswagen","model":"passat","displ":2.8,"year":1999,"cyl":6,"trans":"auto(l5)","drv":"f","cty":16,"hwy":26,"fl":"p","class":"midsize","x":2.8,"y":26},{"manufacturer":"volkswagen","model":"passat","displ":2.8,"year":1999,"cyl":6,"trans":"manual(m5)","drv":"f","cty":18,"hwy":26,"fl":"p","class":"midsize","x":2.8,"y":26},{"manufacturer":"volkswagen","model":"passat","displ":3.6,"year":2008,"cyl":6,"trans":"auto(s6)","drv":"f","cty":17,"hwy":26,"fl":"p","class":"midsize","x":3.6,"y":26}],"type":"scatter"},{"name":"minivan","data":[{"manufacturer":"dodge","model":"caravan 2wd","displ":2.4,"year":1999,"cyl":4,"trans":"auto(l3)","drv":"f","cty":18,"hwy":24,"fl":"r","class":"minivan","x":2.4,"y":24},{"manufacturer":"dodge","model":"caravan 2wd","displ":3,"year":1999,"cyl":6,"trans":"auto(l4)","drv":"f","cty":17,"hwy":24,"fl":"r","class":"minivan","x":3,"y":24},{"manufacturer":"dodge","model":"caravan 2wd","displ":3.3,"year":1999,"cyl":6,"trans":"auto(l4)","drv":"f","cty":16,"hwy":22,"fl":"r","class":"minivan","x":3.3,"y":22},{"manufacturer":"dodge","model":"caravan 2wd","displ":3.3,"year":1999,"cyl":6,"trans":"auto(l4)","drv":"f","cty":16,"hwy":22,"fl":"r","class":"minivan","x":3.3,"y":22},{"manufacturer":"dodge","model":"caravan 2wd","displ":3.3,"year":2008,"cyl":6,"trans":"auto(l4)","drv":"f","cty":17,"hwy":24,"fl":"r","class":"minivan","x":3.3,"y":24},{"manufacturer":"dodge","model":"caravan 2wd","displ":3.3,"year":2008,"cyl":6,"trans":"auto(l4)","drv":"f","cty":17,"hwy":24,"fl":"r","class":"minivan","x":3.3,"y":24},{"manufacturer":"dodge","model":"caravan 2wd","displ":3.3,"year":2008,"cyl":6,"trans":"auto(l4)","drv":"f","cty":11,"hwy":17,"fl":"e","class":"minivan","x":3.3,"y":17},{"manufacturer":"dodge","model":"caravan 2wd","displ":3.8,"year":1999,"cyl":6,"trans":"auto(l4)","drv":"f","cty":15,"hwy":22,"fl":"r","class":"minivan","x":3.8,"y":22},{"manufacturer":"dodge","model":"caravan 2wd","displ":3.8,"year":1999,"cyl":6,"trans":"auto(l4)","drv":"f","cty":15,"hwy":21,"fl":"r","class":"minivan","x":3.8,"y":21},{"manufacturer":"dodge","model":"caravan 2wd","displ":3.8,"year":2008,"cyl":6,"trans":"auto(l6)","drv":"f","cty":16,"hwy":23,"fl":"r","class":"minivan","x":3.8,"y":23},{"manufacturer":"dodge","model":"caravan 2wd","displ":4,"year":2008,"cyl":6,"trans":"auto(l6)","drv":"f","cty":16,"hwy":23,"fl":"r","class":"minivan","x":4,"y":23}],"type":"scatter"},{"name":"pickup","data":[{"manufacturer":"dodge","model":"dakota pickup 4wd","displ":3.7,"year":2008,"cyl":6,"trans":"manual(m6)","drv":"4","cty":15,"hwy":19,"fl":"r","class":"pickup","x":3.7,"y":19},{"manufacturer":"dodge","model":"dakota pickup 4wd","displ":3.7,"year":2008,"cyl":6,"trans":"auto(l4)","drv":"4","cty":14,"hwy":18,"fl":"r","class":"pickup","x":3.7,"y":18},{"manufacturer":"dodge","model":"dakota pickup 4wd","displ":3.9,"year":1999,"cyl":6,"trans":"auto(l4)","drv":"4","cty":13,"hwy":17,"fl":"r","class":"pickup","x":3.9,"y":17},{"manufacturer":"dodge","model":"dakota pickup 4wd","displ":3.9,"year":1999,"cyl":6,"trans":"manual(m5)","drv":"4","cty":14,"hwy":17,"fl":"r","class":"pickup","x":3.9,"y":17},{"manufacturer":"dodge","model":"dakota pickup 4wd","displ":4.7,"year":2008,"cyl":8,"trans":"auto(l5)","drv":"4","cty":14,"hwy":19,"fl":"r","class":"pickup","x":4.7,"y":19},{"manufacturer":"dodge","model":"dakota pickup 4wd","displ":4.7,"year":2008,"cyl":8,"trans":"auto(l5)","drv":"4","cty":14,"hwy":19,"fl":"r","class":"pickup","x":4.7,"y":19},{"manufacturer":"dodge","model":"dakota pickup 4wd","displ":4.7,"year":2008,"cyl":8,"trans":"auto(l5)","drv":"4","cty":9,"hwy":12,"fl":"e","class":"pickup","x":4.7,"y":12},{"manufacturer":"dodge","model":"dakota pickup 4wd","displ":5.2,"year":1999,"cyl":8,"trans":"manual(m5)","drv":"4","cty":11,"hwy":17,"fl":"r","class":"pickup","x":5.2,"y":17},{"manufacturer":"dodge","model":"dakota pickup 4wd","displ":5.2,"year":1999,"cyl":8,"trans":"auto(l4)","drv":"4","cty":11,"hwy":15,"fl":"r","class":"pickup","x":5.2,"y":15},{"manufacturer":"dodge","model":"ram 1500 pickup 4wd","displ":4.7,"year":2008,"cyl":8,"trans":"manual(m6)","drv":"4","cty":12,"hwy":16,"fl":"r","class":"pickup","x":4.7,"y":16},{"manufacturer":"dodge","model":"ram 1500 pickup 4wd","displ":4.7,"year":2008,"cyl":8,"trans":"auto(l5)","drv":"4","cty":9,"hwy":12,"fl":"e","class":"pickup","x":4.7,"y":12},{"manufacturer":"dodge","model":"ram 1500 pickup 4wd","displ":4.7,"year":2008,"cyl":8,"trans":"auto(l5)","drv":"4","cty":13,"hwy":17,"fl":"r","class":"pickup","x":4.7,"y":17},{"manufacturer":"dodge","model":"ram 1500 pickup 4wd","displ":4.7,"year":2008,"cyl":8,"trans":"auto(l5)","drv":"4","cty":13,"hwy":17,"fl":"r","class":"pickup","x":4.7,"y":17},{"manufacturer":"dodge","model":"ram 1500 pickup 4wd","displ":4.7,"year":2008,"cyl":8,"trans":"manual(m6)","drv":"4","cty":12,"hwy":16,"fl":"r","class":"pickup","x":4.7,"y":16},{"manufacturer":"dodge","model":"ram 1500 pickup 4wd","displ":4.7,"year":2008,"cyl":8,"trans":"manual(m6)","drv":"4","cty":9,"hwy":12,"fl":"e","class":"pickup","x":4.7,"y":12},{"manufacturer":"dodge","model":"ram 1500 pickup 4wd","displ":5.2,"year":1999,"cyl":8,"trans":"auto(l4)","drv":"4","cty":11,"hwy":15,"fl":"r","class":"pickup","x":5.2,"y":15},{"manufacturer":"dodge","model":"ram 1500 pickup 4wd","displ":5.2,"year":1999,"cyl":8,"trans":"manual(m5)","drv":"4","cty":11,"hwy":16,"fl":"r","class":"pickup","x":5.2,"y":16},{"manufacturer":"dodge","model":"ram 1500 pickup 4wd","displ":5.7,"year":2008,"cyl":8,"trans":"auto(l5)","drv":"4","cty":13,"hwy":17,"fl":"r","class":"pickup","x":5.7,"y":17},{"manufacturer":"dodge","model":"ram 1500 pickup 4wd","displ":5.9,"year":1999,"cyl":8,"trans":"auto(l4)","drv":"4","cty":11,"hwy":15,"fl":"r","class":"pickup","x":5.9,"y":15},{"manufacturer":"ford","model":"f150 pickup 4wd","displ":4.2,"year":1999,"cyl":6,"trans":"auto(l4)","drv":"4","cty":14,"hwy":17,"fl":"r","class":"pickup","x":4.2,"y":17},{"manufacturer":"ford","model":"f150 pickup 4wd","displ":4.2,"year":1999,"cyl":6,"trans":"manual(m5)","drv":"4","cty":14,"hwy":17,"fl":"r","class":"pickup","x":4.2,"y":17},{"manufacturer":"ford","model":"f150 pickup 4wd","displ":4.6,"year":1999,"cyl":8,"trans":"manual(m5)","drv":"4","cty":13,"hwy":16,"fl":"r","class":"pickup","x":4.6,"y":16},{"manufacturer":"ford","model":"f150 pickup 4wd","displ":4.6,"year":1999,"cyl":8,"trans":"auto(l4)","drv":"4","cty":13,"hwy":16,"fl":"r","class":"pickup","x":4.6,"y":16},{"manufacturer":"ford","model":"f150 pickup 4wd","displ":4.6,"year":2008,"cyl":8,"trans":"auto(l4)","drv":"4","cty":13,"hwy":17,"fl":"r","class":"pickup","x":4.6,"y":17},{"manufacturer":"ford","model":"f150 pickup 4wd","displ":5.4,"year":1999,"cyl":8,"trans":"auto(l4)","drv":"4","cty":11,"hwy":15,"fl":"r","class":"pickup","x":5.4,"y":15},{"manufacturer":"ford","model":"f150 pickup 4wd","displ":5.4,"year":2008,"cyl":8,"trans":"auto(l4)","drv":"4","cty":13,"hwy":17,"fl":"r","class":"pickup","x":5.4,"y":17},{"manufacturer":"toyota","model":"toyota tacoma 4wd","displ":2.7,"year":1999,"cyl":4,"trans":"manual(m5)","drv":"4","cty":15,"hwy":20,"fl":"r","class":"pickup","x":2.7,"y":20},{"manufacturer":"toyota","model":"toyota tacoma 4wd","displ":2.7,"year":1999,"cyl":4,"trans":"auto(l4)","drv":"4","cty":16,"hwy":20,"fl":"r","class":"pickup","x":2.7,"y":20},{"manufacturer":"toyota","model":"toyota tacoma 4wd","displ":2.7,"year":2008,"cyl":4,"trans":"manual(m5)","drv":"4","cty":17,"hwy":22,"fl":"r","class":"pickup","x":2.7,"y":22},{"manufacturer":"toyota","model":"toyota tacoma 4wd","displ":3.4,"year":1999,"cyl":6,"trans":"manual(m5)","drv":"4","cty":15,"hwy":17,"fl":"r","class":"pickup","x":3.4,"y":17},{"manufacturer":"toyota","model":"toyota tacoma 4wd","displ":3.4,"year":1999,"cyl":6,"trans":"auto(l4)","drv":"4","cty":15,"hwy":19,"fl":"r","class":"pickup","x":3.4,"y":19},{"manufacturer":"toyota","model":"toyota tacoma 4wd","displ":4,"year":2008,"cyl":6,"trans":"manual(m6)","drv":"4","cty":15,"hwy":18,"fl":"r","class":"pickup","x":4,"y":18},{"manufacturer":"toyota","model":"toyota tacoma 4wd","displ":4,"year":2008,"cyl":6,"trans":"auto(l5)","drv":"4","cty":16,"hwy":20,"fl":"r","class":"pickup","x":4,"y":20}],"type":"scatter"},{"name":"subcompact","data":[{"manufacturer":"ford","model":"mustang","displ":3.8,"year":1999,"cyl":6,"trans":"manual(m5)","drv":"r","cty":18,"hwy":26,"fl":"r","class":"subcompact","x":3.8,"y":26},{"manufacturer":"ford","model":"mustang","displ":3.8,"year":1999,"cyl":6,"trans":"auto(l4)","drv":"r","cty":18,"hwy":25,"fl":"r","class":"subcompact","x":3.8,"y":25},{"manufacturer":"ford","model":"mustang","displ":4,"year":2008,"cyl":6,"trans":"manual(m5)","drv":"r","cty":17,"hwy":26,"fl":"r","class":"subcompact","x":4,"y":26},{"manufacturer":"ford","model":"mustang","displ":4,"year":2008,"cyl":6,"trans":"auto(l5)","drv":"r","cty":16,"hwy":24,"fl":"r","class":"subcompact","x":4,"y":24},{"manufacturer":"ford","model":"mustang","displ":4.6,"year":1999,"cyl":8,"trans":"auto(l4)","drv":"r","cty":15,"hwy":21,"fl":"r","class":"subcompact","x":4.6,"y":21},{"manufacturer":"ford","model":"mustang","displ":4.6,"year":1999,"cyl":8,"trans":"manual(m5)","drv":"r","cty":15,"hwy":22,"fl":"r","class":"subcompact","x":4.6,"y":22},{"manufacturer":"ford","model":"mustang","displ":4.6,"year":2008,"cyl":8,"trans":"manual(m5)","drv":"r","cty":15,"hwy":23,"fl":"r","class":"subcompact","x":4.6,"y":23},{"manufacturer":"ford","model":"mustang","displ":4.6,"year":2008,"cyl":8,"trans":"auto(l5)","drv":"r","cty":15,"hwy":22,"fl":"r","class":"subcompact","x":4.6,"y":22},{"manufacturer":"ford","model":"mustang","displ":5.4,"year":2008,"cyl":8,"trans":"manual(m6)","drv":"r","cty":14,"hwy":20,"fl":"p","class":"subcompact","x":5.4,"y":20},{"manufacturer":"honda","model":"civic","displ":1.6,"year":1999,"cyl":4,"trans":"manual(m5)","drv":"f","cty":28,"hwy":33,"fl":"r","class":"subcompact","x":1.6,"y":33},{"manufacturer":"honda","model":"civic","displ":1.6,"year":1999,"cyl":4,"trans":"auto(l4)","drv":"f","cty":24,"hwy":32,"fl":"r","class":"subcompact","x":1.6,"y":32},{"manufacturer":"honda","model":"civic","displ":1.6,"year":1999,"cyl":4,"trans":"manual(m5)","drv":"f","cty":25,"hwy":32,"fl":"r","class":"subcompact","x":1.6,"y":32},{"manufacturer":"honda","model":"civic","displ":1.6,"year":1999,"cyl":4,"trans":"manual(m5)","drv":"f","cty":23,"hwy":29,"fl":"p","class":"subcompact","x":1.6,"y":29},{"manufacturer":"honda","model":"civic","displ":1.6,"year":1999,"cyl":4,"trans":"auto(l4)","drv":"f","cty":24,"hwy":32,"fl":"r","class":"subcompact","x":1.6,"y":32},{"manufacturer":"honda","model":"civic","displ":1.8,"year":2008,"cyl":4,"trans":"manual(m5)","drv":"f","cty":26,"hwy":34,"fl":"r","class":"subcompact","x":1.8,"y":34},{"manufacturer":"honda","model":"civic","displ":1.8,"year":2008,"cyl":4,"trans":"auto(l5)","drv":"f","cty":25,"hwy":36,"fl":"r","class":"subcompact","x":1.8,"y":36},{"manufacturer":"honda","model":"civic","displ":1.8,"year":2008,"cyl":4,"trans":"auto(l5)","drv":"f","cty":24,"hwy":36,"fl":"c","class":"subcompact","x":1.8,"y":36},{"manufacturer":"honda","model":"civic","displ":2,"year":2008,"cyl":4,"trans":"manual(m6)","drv":"f","cty":21,"hwy":29,"fl":"p","class":"subcompact","x":2,"y":29},{"manufacturer":"hyundai","model":"tiburon","displ":2,"year":1999,"cyl":4,"trans":"auto(l4)","drv":"f","cty":19,"hwy":26,"fl":"r","class":"subcompact","x":2,"y":26},{"manufacturer":"hyundai","model":"tiburon","displ":2,"year":1999,"cyl":4,"trans":"manual(m5)","drv":"f","cty":19,"hwy":29,"fl":"r","class":"subcompact","x":2,"y":29},{"manufacturer":"hyundai","model":"tiburon","displ":2,"year":2008,"cyl":4,"trans":"manual(m5)","drv":"f","cty":20,"hwy":28,"fl":"r","class":"subcompact","x":2,"y":28},{"manufacturer":"hyundai","model":"tiburon","displ":2,"year":2008,"cyl":4,"trans":"auto(l4)","drv":"f","cty":20,"hwy":27,"fl":"r","class":"subcompact","x":2,"y":27},{"manufacturer":"hyundai","model":"tiburon","displ":2.7,"year":2008,"cyl":6,"trans":"auto(l4)","drv":"f","cty":17,"hwy":24,"fl":"r","class":"subcompact","x":2.7,"y":24},{"manufacturer":"hyundai","model":"tiburon","displ":2.7,"year":2008,"cyl":6,"trans":"manual(m6)","drv":"f","cty":16,"hwy":24,"fl":"r","class":"subcompact","x":2.7,"y":24},{"manufacturer":"hyundai","model":"tiburon","displ":2.7,"year":2008,"cyl":6,"trans":"manual(m5)","drv":"f","cty":17,"hwy":24,"fl":"r","class":"subcompact","x":2.7,"y":24},{"manufacturer":"subaru","model":"impreza awd","displ":2.2,"year":1999,"cyl":4,"trans":"auto(l4)","drv":"4","cty":21,"hwy":26,"fl":"r","class":"subcompact","x":2.2,"y":26},{"manufacturer":"subaru","model":"impreza awd","displ":2.2,"year":1999,"cyl":4,"trans":"manual(m5)","drv":"4","cty":19,"hwy":26,"fl":"r","class":"subcompact","x":2.2,"y":26},{"manufacturer":"subaru","model":"impreza awd","displ":2.5,"year":1999,"cyl":4,"trans":"manual(m5)","drv":"4","cty":19,"hwy":26,"fl":"r","class":"subcompact","x":2.5,"y":26},{"manufacturer":"subaru","model":"impreza awd","displ":2.5,"year":1999,"cyl":4,"trans":"auto(l4)","drv":"4","cty":19,"hwy":26,"fl":"r","class":"subcompact","x":2.5,"y":26},{"manufacturer":"volkswagen","model":"new beetle","displ":1.9,"year":1999,"cyl":4,"trans":"manual(m5)","drv":"f","cty":35,"hwy":44,"fl":"d","class":"subcompact","x":1.9,"y":44},{"manufacturer":"volkswagen","model":"new beetle","displ":1.9,"year":1999,"cyl":4,"trans":"auto(l4)","drv":"f","cty":29,"hwy":41,"fl":"d","class":"subcompact","x":1.9,"y":41},{"manufacturer":"volkswagen","model":"new beetle","displ":2,"year":1999,"cyl":4,"trans":"manual(m5)","drv":"f","cty":21,"hwy":29,"fl":"r","class":"subcompact","x":2,"y":29},{"manufacturer":"volkswagen","model":"new beetle","displ":2,"year":1999,"cyl":4,"trans":"auto(l4)","drv":"f","cty":19,"hwy":26,"fl":"r","class":"subcompact","x":2,"y":26},{"manufacturer":"volkswagen","model":"new beetle","displ":2.5,"year":2008,"cyl":5,"trans":"manual(m5)","drv":"f","cty":20,"hwy":28,"fl":"r","class":"subcompact","x":2.5,"y":28},{"manufacturer":"volkswagen","model":"new beetle","displ":2.5,"year":2008,"cyl":5,"trans":"auto(s6)","drv":"f","cty":20,"hwy":29,"fl":"r","class":"subcompact","x":2.5,"y":29}],"type":"scatter"},{"name":"suv","data":[{"manufacturer":"chevrolet","model":"c1500 suburban 2wd","displ":5.3,"year":2008,"cyl":8,"trans":"auto(l4)","drv":"r","cty":14,"hwy":20,"fl":"r","class":"suv","x":5.3,"y":20},{"manufacturer":"chevrolet","model":"c1500 suburban 2wd","displ":5.3,"year":2008,"cyl":8,"trans":"auto(l4)","drv":"r","cty":11,"hwy":15,"fl":"e","class":"suv","x":5.3,"y":15},{"manufacturer":"chevrolet","model":"c1500 suburban 2wd","displ":5.3,"year":2008,"cyl":8,"trans":"auto(l4)","drv":"r","cty":14,"hwy":20,"fl":"r","class":"suv","x":5.3,"y":20},{"manufacturer":"chevrolet","model":"c1500 suburban 2wd","displ":5.7,"year":1999,"cyl":8,"trans":"auto(l4)","drv":"r","cty":13,"hwy":17,"fl":"r","class":"suv","x":5.7,"y":17},{"manufacturer":"chevrolet","model":"c1500 suburban 2wd","displ":6,"year":2008,"cyl":8,"trans":"auto(l4)","drv":"r","cty":12,"hwy":17,"fl":"r","class":"suv","x":6,"y":17},{"manufacturer":"chevrolet","model":"k1500 tahoe 4wd","displ":5.3,"year":2008,"cyl":8,"trans":"auto(l4)","drv":"4","cty":14,"hwy":19,"fl":"r","class":"suv","x":5.3,"y":19},{"manufacturer":"chevrolet","model":"k1500 tahoe 4wd","displ":5.3,"year":2008,"cyl":8,"trans":"auto(l4)","drv":"4","cty":11,"hwy":14,"fl":"e","class":"suv","x":5.3,"y":14},{"manufacturer":"chevrolet","model":"k1500 tahoe 4wd","displ":5.7,"year":1999,"cyl":8,"trans":"auto(l4)","drv":"4","cty":11,"hwy":15,"fl":"r","class":"suv","x":5.7,"y":15},{"manufacturer":"chevrolet","model":"k1500 tahoe 4wd","displ":6.5,"year":1999,"cyl":8,"trans":"auto(l4)","drv":"4","cty":14,"hwy":17,"fl":"d","class":"suv","x":6.5,"y":17},{"manufacturer":"dodge","model":"durango 4wd","displ":3.9,"year":1999,"cyl":6,"trans":"auto(l4)","drv":"4","cty":13,"hwy":17,"fl":"r","class":"suv","x":3.9,"y":17},{"manufacturer":"dodge","model":"durango 4wd","displ":4.7,"year":2008,"cyl":8,"trans":"auto(l5)","drv":"4","cty":13,"hwy":17,"fl":"r","class":"suv","x":4.7,"y":17},{"manufacturer":"dodge","model":"durango 4wd","displ":4.7,"year":2008,"cyl":8,"trans":"auto(l5)","drv":"4","cty":9,"hwy":12,"fl":"e","class":"suv","x":4.7,"y":12},{"manufacturer":"dodge","model":"durango 4wd","displ":4.7,"year":2008,"cyl":8,"trans":"auto(l5)","drv":"4","cty":13,"hwy":17,"fl":"r","class":"suv","x":4.7,"y":17},{"manufacturer":"dodge","model":"durango 4wd","displ":5.2,"year":1999,"cyl":8,"trans":"auto(l4)","drv":"4","cty":11,"hwy":16,"fl":"r","class":"suv","x":5.2,"y":16},{"manufacturer":"dodge","model":"durango 4wd","displ":5.7,"year":2008,"cyl":8,"trans":"auto(l5)","drv":"4","cty":13,"hwy":18,"fl":"r","class":"suv","x":5.7,"y":18},{"manufacturer":"dodge","model":"durango 4wd","displ":5.9,"year":1999,"cyl":8,"trans":"auto(l4)","drv":"4","cty":11,"hwy":15,"fl":"r","class":"suv","x":5.9,"y":15},{"manufacturer":"ford","model":"expedition 2wd","displ":4.6,"year":1999,"cyl":8,"trans":"auto(l4)","drv":"r","cty":11,"hwy":17,"fl":"r","class":"suv","x":4.6,"y":17},{"manufacturer":"ford","model":"expedition 2wd","displ":5.4,"year":1999,"cyl":8,"trans":"auto(l4)","drv":"r","cty":11,"hwy":17,"fl":"r","class":"suv","x":5.4,"y":17},{"manufacturer":"ford","model":"expedition 2wd","displ":5.4,"year":2008,"cyl":8,"trans":"auto(l6)","drv":"r","cty":12,"hwy":18,"fl":"r","class":"suv","x":5.4,"y":18},{"manufacturer":"ford","model":"explorer 4wd","displ":4,"year":1999,"cyl":6,"trans":"auto(l5)","drv":"4","cty":14,"hwy":17,"fl":"r","class":"suv","x":4,"y":17},{"manufacturer":"ford","model":"explorer 4wd","displ":4,"year":1999,"cyl":6,"trans":"manual(m5)","drv":"4","cty":15,"hwy":19,"fl":"r","class":"suv","x":4,"y":19},{"manufacturer":"ford","model":"explorer 4wd","displ":4,"year":1999,"cyl":6,"trans":"auto(l5)","drv":"4","cty":14,"hwy":17,"fl":"r","class":"suv","x":4,"y":17},{"manufacturer":"ford","model":"explorer 4wd","displ":4,"year":2008,"cyl":6,"trans":"auto(l5)","drv":"4","cty":13,"hwy":19,"fl":"r","class":"suv","x":4,"y":19},{"manufacturer":"ford","model":"explorer 4wd","displ":4.6,"year":2008,"cyl":8,"trans":"auto(l6)","drv":"4","cty":13,"hwy":19,"fl":"r","class":"suv","x":4.6,"y":19},{"manufacturer":"ford","model":"explorer 4wd","displ":5,"year":1999,"cyl":8,"trans":"auto(l4)","drv":"4","cty":13,"hwy":17,"fl":"r","class":"suv","x":5,"y":17},{"manufacturer":"jeep","model":"grand cherokee 4wd","displ":3,"year":2008,"cyl":6,"trans":"auto(l5)","drv":"4","cty":17,"hwy":22,"fl":"d","class":"suv","x":3,"y":22},{"manufacturer":"jeep","model":"grand cherokee 4wd","displ":3.7,"year":2008,"cyl":6,"trans":"auto(l5)","drv":"4","cty":15,"hwy":19,"fl":"r","class":"suv","x":3.7,"y":19},{"manufacturer":"jeep","model":"grand cherokee 4wd","displ":4,"year":1999,"cyl":6,"trans":"auto(l4)","drv":"4","cty":15,"hwy":20,"fl":"r","class":"suv","x":4,"y":20},{"manufacturer":"jeep","model":"grand cherokee 4wd","displ":4.7,"year":1999,"cyl":8,"trans":"auto(l4)","drv":"4","cty":14,"hwy":17,"fl":"r","class":"suv","x":4.7,"y":17},{"manufacturer":"jeep","model":"grand cherokee 4wd","displ":4.7,"year":2008,"cyl":8,"trans":"auto(l5)","drv":"4","cty":9,"hwy":12,"fl":"e","class":"suv","x":4.7,"y":12},{"manufacturer":"jeep","model":"grand cherokee 4wd","displ":4.7,"year":2008,"cyl":8,"trans":"auto(l5)","drv":"4","cty":14,"hwy":19,"fl":"r","class":"suv","x":4.7,"y":19},{"manufacturer":"jeep","model":"grand cherokee 4wd","displ":5.7,"year":2008,"cyl":8,"trans":"auto(l5)","drv":"4","cty":13,"hwy":18,"fl":"r","class":"suv","x":5.7,"y":18},{"manufacturer":"jeep","model":"grand cherokee 4wd","displ":6.1,"year":2008,"cyl":8,"trans":"auto(l5)","drv":"4","cty":11,"hwy":14,"fl":"p","class":"suv","x":6.1,"y":14},{"manufacturer":"land rover","model":"range rover","displ":4,"year":1999,"cyl":8,"trans":"auto(l4)","drv":"4","cty":11,"hwy":15,"fl":"p","class":"suv","x":4,"y":15},{"manufacturer":"land rover","model":"range rover","displ":4.2,"year":2008,"cyl":8,"trans":"auto(s6)","drv":"4","cty":12,"hwy":18,"fl":"r","class":"suv","x":4.2,"y":18},{"manufacturer":"land rover","model":"range rover","displ":4.4,"year":2008,"cyl":8,"trans":"auto(s6)","drv":"4","cty":12,"hwy":18,"fl":"r","class":"suv","x":4.4,"y":18},{"manufacturer":"land rover","model":"range rover","displ":4.6,"year":1999,"cyl":8,"trans":"auto(l4)","drv":"4","cty":11,"hwy":15,"fl":"p","class":"suv","x":4.6,"y":15},{"manufacturer":"lincoln","model":"navigator 2wd","displ":5.4,"year":1999,"cyl":8,"trans":"auto(l4)","drv":"r","cty":11,"hwy":17,"fl":"r","class":"suv","x":5.4,"y":17},{"manufacturer":"lincoln","model":"navigator 2wd","displ":5.4,"year":1999,"cyl":8,"trans":"auto(l4)","drv":"r","cty":11,"hwy":16,"fl":"p","class":"suv","x":5.4,"y":16},{"manufacturer":"lincoln","model":"navigator 2wd","displ":5.4,"year":2008,"cyl":8,"trans":"auto(l6)","drv":"r","cty":12,"hwy":18,"fl":"r","class":"suv","x":5.4,"y":18},{"manufacturer":"mercury","model":"mountaineer 4wd","displ":4,"year":1999,"cyl":6,"trans":"auto(l5)","drv":"4","cty":14,"hwy":17,"fl":"r","class":"suv","x":4,"y":17},{"manufacturer":"mercury","model":"mountaineer 4wd","displ":4,"year":2008,"cyl":6,"trans":"auto(l5)","drv":"4","cty":13,"hwy":19,"fl":"r","class":"suv","x":4,"y":19},{"manufacturer":"mercury","model":"mountaineer 4wd","displ":4.6,"year":2008,"cyl":8,"trans":"auto(l6)","drv":"4","cty":13,"hwy":19,"fl":"r","class":"suv","x":4.6,"y":19},{"manufacturer":"mercury","model":"mountaineer 4wd","displ":5,"year":1999,"cyl":8,"trans":"auto(l4)","drv":"4","cty":13,"hwy":17,"fl":"r","class":"suv","x":5,"y":17},{"manufacturer":"nissan","model":"pathfinder 4wd","displ":3.3,"year":1999,"cyl":6,"trans":"auto(l4)","drv":"4","cty":14,"hwy":17,"fl":"r","class":"suv","x":3.3,"y":17},{"manufacturer":"nissan","model":"pathfinder 4wd","displ":3.3,"year":1999,"cyl":6,"trans":"manual(m5)","drv":"4","cty":15,"hwy":17,"fl":"r","class":"suv","x":3.3,"y":17},{"manufacturer":"nissan","model":"pathfinder 4wd","displ":4,"year":2008,"cyl":6,"trans":"auto(l5)","drv":"4","cty":14,"hwy":20,"fl":"p","class":"suv","x":4,"y":20},{"manufacturer":"nissan","model":"pathfinder 4wd","displ":5.6,"year":2008,"cyl":8,"trans":"auto(s5)","drv":"4","cty":12,"hwy":18,"fl":"p","class":"suv","x":5.6,"y":18},{"manufacturer":"subaru","model":"forester awd","displ":2.5,"year":1999,"cyl":4,"trans":"manual(m5)","drv":"4","cty":18,"hwy":25,"fl":"r","class":"suv","x":2.5,"y":25},{"manufacturer":"subaru","model":"forester awd","displ":2.5,"year":1999,"cyl":4,"trans":"auto(l4)","drv":"4","cty":18,"hwy":24,"fl":"r","class":"suv","x":2.5,"y":24},{"manufacturer":"subaru","model":"forester awd","displ":2.5,"year":2008,"cyl":4,"trans":"manual(m5)","drv":"4","cty":20,"hwy":27,"fl":"r","class":"suv","x":2.5,"y":27},{"manufacturer":"subaru","model":"forester awd","displ":2.5,"year":2008,"cyl":4,"trans":"manual(m5)","drv":"4","cty":19,"hwy":25,"fl":"p","class":"suv","x":2.5,"y":25},{"manufacturer":"subaru","model":"forester awd","displ":2.5,"year":2008,"cyl":4,"trans":"auto(l4)","drv":"4","cty":20,"hwy":26,"fl":"r","class":"suv","x":2.5,"y":26},{"manufacturer":"subaru","model":"forester awd","displ":2.5,"year":2008,"cyl":4,"trans":"auto(l4)","drv":"4","cty":18,"hwy":23,"fl":"p","class":"suv","x":2.5,"y":23},{"manufacturer":"toyota","model":"4runner 4wd","displ":2.7,"year":1999,"cyl":4,"trans":"manual(m5)","drv":"4","cty":15,"hwy":20,"fl":"r","class":"suv","x":2.7,"y":20},{"manufacturer":"toyota","model":"4runner 4wd","displ":2.7,"year":1999,"cyl":4,"trans":"auto(l4)","drv":"4","cty":16,"hwy":20,"fl":"r","class":"suv","x":2.7,"y":20},{"manufacturer":"toyota","model":"4runner 4wd","displ":3.4,"year":1999,"cyl":6,"trans":"auto(l4)","drv":"4","cty":15,"hwy":19,"fl":"r","class":"suv","x":3.4,"y":19},{"manufacturer":"toyota","model":"4runner 4wd","displ":3.4,"year":1999,"cyl":6,"trans":"manual(m5)","drv":"4","cty":15,"hwy":17,"fl":"r","class":"suv","x":3.4,"y":17},{"manufacturer":"toyota","model":"4runner 4wd","displ":4,"year":2008,"cyl":6,"trans":"auto(l5)","drv":"4","cty":16,"hwy":20,"fl":"r","class":"suv","x":4,"y":20},{"manufacturer":"toyota","model":"4runner 4wd","displ":4.7,"year":2008,"cyl":8,"trans":"auto(l5)","drv":"4","cty":14,"hwy":17,"fl":"r","class":"suv","x":4.7,"y":17},{"manufacturer":"toyota","model":"land cruiser wagon 4wd","displ":4.7,"year":1999,"cyl":8,"trans":"auto(l4)","drv":"4","cty":11,"hwy":15,"fl":"r","class":"suv","x":4.7,"y":15},{"manufacturer":"toyota","model":"land cruiser wagon 4wd","displ":5.7,"year":2008,"cyl":8,"trans":"auto(s6)","drv":"4","cty":13,"hwy":18,"fl":"r","class":"suv","x":5.7,"y":18}],"type":"scatter"}],"xAxis":{"type":"linear","title":{"text":"displ"},"categories":null}},"theme":{"chart":{"backgroundColor":"transparent"}},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","drillUpText":"Back to {series.name}","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"thousandsSep":" ","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"chart","fonts":[],"debug":false},"evals":[],"jsHooks":[]}</script>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>
+# A tibble: 28 x 4
+   movie                   release    key        number
+   &lt;chr&gt;                   &lt;chr&gt;      &lt;chr&gt;       &lt;int&gt;
+ 1 A New Hope              1977-05-25 species         5
+ 2 A New Hope              1977-05-25 planets         3
+ 3 A New Hope              1977-05-25 characters     18
+ 4 A New Hope              1977-05-25 vehicles        4
+ 5 The Empire Strikes Back 1980-05-17 species         5
+ 6 The Empire Strikes Back 1980-05-17 planets         4
+ 7 The Empire Strikes Back 1980-05-17 characters     16
+ 8 The Empire Strikes Back 1980-05-17 vehicles        6
+ 9 Return of the Jedi      1983-05-25 species         9
+10 Return of the Jedi      1983-05-25 planets         5
+# … with 18 more rows</code></pre>
+<div id="htmlwidget-4b086e82182c94179b55" style="width:100%;height:500px;" class="highchart html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4b086e82182c94179b55">{"x":{"hc_opts":{"title":{"text":"Diversity in <span style=\"color:#e5b13a\"> STAR WARS<\/span> movies","useHTML":true},"yAxis":{"title":{"text":"number"},"type":"linear"},"credits":{"enabled":true,"text":"Source: SWAPI via rwars package","href":"https://swapi.co/"},"exporting":{"enabled":false},"plotOptions":{"series":{"label":{"enabled":false},"turboThreshold":0,"showInLegend":true},"treemap":{"layoutAlgorithm":"squarified"},"scatter":{"marker":{"symbol":"circle"}}},"series":[{"name":"characters","data":[{"movie":"A New Hope","release":"1977-05-25","key":"characters","number":18,"y":18,"name":"A New Hope"},{"movie":"The Empire Strikes Back","release":"1980-05-17","key":"characters","number":16,"y":16,"name":"The Empire Strikes Back"},{"movie":"Return of the Jedi","release":"1983-05-25","key":"characters","number":20,"y":20,"name":"Return of the Jedi"},{"movie":"The Phantom Menace","release":"1999-05-19","key":"characters","number":34,"y":34,"name":"The Phantom Menace"},{"movie":"Attack of the Clones","release":"2002-05-16","key":"characters","number":40,"y":40,"name":"Attack of the Clones"},{"movie":"Revenge of the Sith","release":"2005-05-19","key":"characters","number":34,"y":34,"name":"Revenge of the Sith"},{"movie":"The Force Awakens","release":"2015-12-11","key":"characters","number":11,"y":11,"name":"The Force Awakens"}],"type":"line","color":"#e5b13a"},{"name":"planets","data":[{"movie":"A New Hope","release":"1977-05-25","key":"planets","number":3,"y":3,"name":"A New Hope"},{"movie":"The Empire Strikes Back","release":"1980-05-17","key":"planets","number":4,"y":4,"name":"The Empire Strikes Back"},{"movie":"Return of the Jedi","release":"1983-05-25","key":"planets","number":5,"y":5,"name":"Return of the Jedi"},{"movie":"The Phantom Menace","release":"1999-05-19","key":"planets","number":3,"y":3,"name":"The Phantom Menace"},{"movie":"Attack of the Clones","release":"2002-05-16","key":"planets","number":5,"y":5,"name":"Attack of the Clones"},{"movie":"Revenge of the Sith","release":"2005-05-19","key":"planets","number":13,"y":13,"name":"Revenge of the Sith"},{"movie":"The Force Awakens","release":"2015-12-11","key":"planets","number":1,"y":1,"name":"The Force Awakens"}],"type":"line","color":"#4bd5ee"},{"name":"species","data":[{"movie":"A New Hope","release":"1977-05-25","key":"species","number":5,"y":5,"name":"A New Hope"},{"movie":"The Empire Strikes Back","release":"1980-05-17","key":"species","number":5,"y":5,"name":"The Empire Strikes Back"},{"movie":"Return of the Jedi","release":"1983-05-25","key":"species","number":9,"y":9,"name":"Return of the Jedi"},{"movie":"The Phantom Menace","release":"1999-05-19","key":"species","number":20,"y":20,"name":"The Phantom Menace"},{"movie":"Attack of the Clones","release":"2002-05-16","key":"species","number":14,"y":14,"name":"Attack of the Clones"},{"movie":"Revenge of the Sith","release":"2005-05-19","key":"species","number":20,"y":20,"name":"Revenge of the Sith"},{"movie":"The Force Awakens","release":"2015-12-11","key":"species","number":3,"y":3,"name":"The Force Awakens"}],"type":"line","color":"#4AA942"},{"name":"vehicles","data":[{"movie":"A New Hope","release":"1977-05-25","key":"vehicles","number":4,"y":4,"name":"A New Hope"},{"movie":"The Empire Strikes Back","release":"1980-05-17","key":"vehicles","number":6,"y":6,"name":"The Empire Strikes Back"},{"movie":"Return of the Jedi","release":"1983-05-25","key":"vehicles","number":8,"y":8,"name":"Return of the Jedi"},{"movie":"The Phantom Menace","release":"1999-05-19","key":"vehicles","number":7,"y":7,"name":"The Phantom Menace"},{"movie":"Attack of the Clones","release":"2002-05-16","key":"vehicles","number":11,"y":11,"name":"Attack of the Clones"},{"movie":"Revenge of the Sith","release":"2005-05-19","key":"vehicles","number":13,"y":13,"name":"Revenge of the Sith"},{"movie":"The Force Awakens","release":"2015-12-11","key":"vehicles","number":0,"y":0,"name":"The Force Awakens"}],"type":"line","color":"#FAFAFA"}],"xAxis":{"type":"category","title":{"text":"movie"},"categories":null},"tooltip":{"shared":true,"formatter":"function(tooltip){\n          function isArray(obj) {\n          return Object.prototype.toString.call(obj) === '[object Array]';\n          }\n\n          function splat(obj) {\n          return isArray(obj) ? obj : [obj];\n          }\n\n          var items = this.points || splat(this), series = items[0].series, s;\n\n          // sort the values\n          items.sort(function(a, b){\n          return ((a.y < b.y) ? -1 : ((a.y > b.y) ? 1 : 0));\n          });\n          items.reverse();\n\n          return tooltip.defaultFormatter.call(this, tooltip);\n        }","useHTML":true,"headerFormat":"<small>{point.key}<\/small><table>","pointFormat":"<tr><td style=\"color: {series.color}\">{series.name}: <\/td><td style=\"text-align: right\"><b>{point.y}<\/b><\/td><\/tr>","footerFormat":"<\/table>"}},"theme":{"colors":["#f1c40f","#2ecc71","#9b59b6","#e74c3c","#34495e","#3498db","#1abc9c","#f39c12","#d35400"],"chart":{"backgroundColor":"transparent","divBackgroundImage":"http://www.wired.com/images_blogs/underwire/2013/02/xwing-bg.gif"},"xAxis":{"gridLineDashStyle":"Dash","gridLineWidth":1,"gridLineColor":"#46627f","lineColor":"#46627f","minorGridLineColor":"#BDC3C7","tickColor":"#46627f","tickWidth":1,"title":{"style":{"color":"#FFFFFF"}}},"yAxis":{"gridLineDashStyle":"Dash","gridLineColor":"#46627f","lineColor":"#BDC3C7","minorGridLineColor":"#BDC3C7","tickColor":"#46627f","tickWidth":1,"title":{"style":{"color":"#FFFFFF"}}},"legendBackgroundColor":"rgba(0, 0, 0, 0.5)","background2":"#505053","dataLabelsColor":"#B0B0B3","textColor":"#34495e","contrastTextColor":"#F0F0F3","maskColor":"rgba(255,255,255,0.3)","title":{"style":{"color":"#FFFFFF"}},"subtitle":{"style":{"color":"#666666"}},"legend":{"itemStyle":{"color":"#C0C0C0"},"itemHoverStyle":{"color":"#C0C0C0"},"itemHiddenStyle":{"color":"#444444"}}},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","drillUpText":"Back to {series.name}","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"thousandsSep":" ","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"chart","fonts":[],"debug":false},"evals":["hc_opts.tooltip.formatter"],"jsHooks":[]}</script>
+</div>
+<!--radix_placeholder_article_footer-->
+<div class="article-footer">
+  <p class="social_footer">
+    <span class="disqus-comments">
+      <i class="fas fa-comments"></i>
+      &nbsp;
+      <span class="disqus-comment-count" data-disqus-identifier="posts/2020-03-29-graph-test-post/">Comment on this article</span>
+    </span>
+    <span class="article-sharing">
+      Share: &nbsp;
+      <a href="https://twitter.com/share?text=Graph%20test%20post&amp;url=https%3A%2F%2Fvinbrule.github.io%2Fhvt2%2Fposts%2F2020-03-29-graph-test-post%2F">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fvinbrule.github.io%2Fhvt2%2Fposts%2F2020-03-29-graph-test-post%2F&amp;title=Graph%20test%20post">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </span>
+  </p>
+  <script id="dsq-count-scr" src="https://hvt.disqus.com/count.js" async></script>
+  <div id="disqus_thread" class="hidden"></div>
+  <script>
+var disqus_config = function () {
+  this.page.url = 'https://vinbrule.github.io/hvt2/posts/2020-03-29-graph-test-post/';
+  this.page.identifier = 'posts/2020-03-29-graph-test-post/';
+};
+(function() {
+  var d = document, s = d.createElement('script');
+  s.src = 'https://hvt.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+})();
+</script>
+</div>
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom">
+  <h3 id="citation">Citation</h3>
+  <p>For attribution, please cite this work as</p>
+  <pre class="citation-appendix short">Regenstein (2020, March 29). A normal person on earth: Graph test post. Retrieved from https://vinbrule.github.io/hvt2/posts/2020-03-29-graph-test-post/</pre>
+  <p>BibTeX citation</p>
+  <pre class="citation-appendix long">@misc{regenstein2020graph,
+  author = {Regenstein, Jonathan},
+  title = {A normal person on earth: Graph test post},
+  url = {https://vinbrule.github.io/hvt2/posts/2020-03-29-graph-test-post/},
+  year = {2020}
+}</pre>
+</div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+---
+title: "Graph test post"
+description: |
+  A short description of the post.
+author:
+  - name: Jonathan Regenstein
+    url: https://www.linkedin.com/in/jkregenstein/
+date: 03-29-2020
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r, layout="l-body-outset", fig.width=6, fig.height=1.5}
+library(ggplot2)
+ggplot(diamonds, aes(carat, price)) + geom_smooth() +
+  facet_grid(~ cut)
+```
+```{r}
+library("highcharter")
+data(diamonds, mpg, package = "ggplot2")
+
+hchart(mpg, "scatter", hcaes(x = displ, y = hwy, group = class))
+```
+
+```{r}
+library(tidyverse)
+library(rwars)
+
+swmovies <- get_all_films()
+
+swdata <- map_df(swmovies$results, function(x){
+  data_frame(
+    movie = x$title,
+    species = length(x$species),
+    planets = length(x$planets),
+    characters = length(x$characters),
+    vehicles = length(x$vehicles),
+    release = x$release_date
+  )
+}) 
+
+swdata <- gather(swdata, key, number, -movie, -release) %>% 
+  arrange(release)
+
+swdata
+## # A tibble: 28 × 4
+##                      movie    release        key number
+##                      <chr>      <chr>      <chr>  <int>
+## 1               A New Hope 1977-05-25    species      5
+## 2               A New Hope 1977-05-25    planets      3
+## 3               A New Hope 1977-05-25 characters     18
+## 4               A New Hope 1977-05-25   vehicles      4
+## 5  The Empire Strikes Back 1980-05-17    species      5
+## 6  The Empire Strikes Back 1980-05-17    planets      4
+## 7  The Empire Strikes Back 1980-05-17 characters     16
+## 8  The Empire Strikes Back 1980-05-17   vehicles      6
+## 9       Return of the Jedi 1983-05-25    species      9
+## 10      Return of the Jedi 1983-05-25    planets      5
+## # ... with 18 more rows
+
+hchart(swdata, "line", hcaes(x = movie, y = number, group = key),
+       color = c("#e5b13a", "#4bd5ee", "#4AA942", "#FAFAFA")) %>% 
+  hc_title(
+    text = "Diversity in <span style=\"color:#e5b13a\"> STAR WARS</span> movies",
+    useHTML = TRUE) %>% 
+  hc_tooltip(table = TRUE, sort = TRUE) %>% 
+  hc_credits(
+    enabled = TRUE,
+    text = "Source: SWAPI via rwars package",
+    href = "https://swapi.co/") %>% 
+  hc_add_theme(
+    hc_theme_flatdark(
+      chart = list(
+        backgroundColor = "transparent",
+        divBackgroundImage = "http://www.wired.com/images_blogs/underwire/2013/02/xwing-bg.gif"
+      )
+    )
+  )
+```
+

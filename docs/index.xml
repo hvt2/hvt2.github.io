@@ -7,7 +7,24 @@
     <description>Looking for the beauty in the details
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Sun, 16 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 20 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>covid in vietnam</title>
+      <dc:creator>Jonathan Regenstein</dc:creator>
+      <link>https://vinbrule.github.io/hvt2/posts/2020-04-20-covid-in-vietnam</link>
+      <description>A short description of the post.</description>
+      <guid>https://vinbrule.github.io/hvt2/posts/2020-04-20-covid-in-vietnam</guid>
+      <pubDate>Mon, 20 Apr 2020 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Graph test post</title>
+      <dc:creator>Jonathan Regenstein</dc:creator>
+      <link>https://vinbrule.github.io/hvt2/posts/2020-03-29-graph-test-post</link>
+      <description>A short description of the post.</description>
+      <guid>https://vinbrule.github.io/hvt2/posts/2020-03-29-graph-test-post</guid>
+      <pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate>
+      <media:content url="https://vinbrule.github.io/hvt2/posts/2020-03-29-graph-test-post/graph-test-post_files/figure-html5/unnamed-chunk-1-1.png" medium="image" type="image/png" width="1152" height="288"/>
+    </item>
     <item>
       <title>Visualizing Asset Returns</title>
       <dc:creator>Jonathan Regenstein</dc:creator>
